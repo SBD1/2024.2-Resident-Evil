@@ -21,8 +21,8 @@ Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo
             </a>
         </td>
         <td align="center">
-            <a href="">
-                <img style="border-radius: 50%;" src="" width="150px;"/>
+            <a href="https://github.com/Brunocrzz">
+                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/122310754?v=4" width="150px;"/>
                 <h5 class="text-center">Bruno Cruz</h5>
             </a>
         </td>
@@ -34,8 +34,8 @@ Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo
         </td>
         </td>
         <td align="center">
-            <a href="">
-                <img style="border-radius: 50%;" src="" width="150px;"/>
+            <a href="https://github.com/Pabloo8">
+                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/121682371?v=4" width="150px;"/>
                 <h5 class="text-center">Pablo Cunha de Jesus</h5>
             </a>
         </td>
