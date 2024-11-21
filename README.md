@@ -10,7 +10,7 @@ Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo
 | Nome                                                                      | 
 | :------------------------------------------------------------------------ |
 | [Anne de Capdeville](https://github.com/nanecapde)       | 
-| [Breno]()            |
+| [Breno Yuri]()            |
 | [Bruno Cruz Rosa Garcia]() |           
 | [Jose Felipe Duarte Guedes de Oliveira](https://github.com/Jose1277) |              
 | [Pablo Cunha de Jesus]() |
