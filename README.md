@@ -15,8 +15,8 @@ Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo
             </a>
         </td>
         <td align="center">
-            <a href="">
-                <img style="border-radius: 50%;" src="" width="150px;"/>
+            <a href="https://github.com/YuriBre">
+                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/87884030?v=4" width="150px;"/>
                 <h5 class="text-center">Breno Yuri</h5>
             </a>
         </td>
