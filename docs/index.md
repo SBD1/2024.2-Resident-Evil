@@ -6,40 +6,47 @@ Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo
 
 # Colaboradores
 
-<center>
+<head>
+    <style>
+       img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
 <table style="margin-left: auto; margin-right: auto;">
     <tr>
-        <td align="center">
+        <td>
             <a href="https://github.com/nanecapde">
-                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/122893055?v=4" width="150px;"/>
-                <h5 class="text-center">Anne de Capdeville</h5>
+                <img src="https://avatars.githubusercontent.com/u/122893055?v=4"/>
+                <h5 style="text-align: center">Anne de Capdeville</h5>
             </a>
         </td>
-        <td align="center">
-            <a href="">
-                <img style="border-radius: 50%;" src="" width="150px;"/>
-                <h5 class="text-center">Breno Yuri</h5>
+        <td>
+            <a href="https://github.com/YuriBre">
+                <img src="https://avatars.githubusercontent.com/u/87884030?v=4" />
+                <h5 style="text-align: center">Breno Yuri</h5>
             </a>
         </td>
-        <td align="center">
+        <td>
             <a href="https://github.com/Brunocrzz">
-                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/122310754?v=4" width="150px;"/>
-                <h5 class="text-center">Bruno Cruz</h5>
+                <img src="https://avatars.githubusercontent.com/u/122310754?v=4" />
+                <h5 style="text-align: center">Bruno Cruz</h5>
             </a>
         </td>
-        <td align="center">
+        <td>
             <a href="https://github.com/Jose1277">
-                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/132015244?v=4" width="150px;"/>
-                <h5 class="text-center">Jose Felipe Duarte Guedes de Oliveira</h5>
+                <img src="https://avatars.githubusercontent.com/u/132015244?v=4" />
+                <h5 style="text-align: center">Jose Felipe Oliveira</h5>
             </a>
         </td>
-        </td>
-        <td align="center">
+        <td>
             <a href="https://github.com/Pabloo8">
-                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/121682371?v=4" width="150px;"/>
-                <h5 class="text-center">Pablo Cunha de Jesus</h5>
+                <img src="https://avatars.githubusercontent.com/u/121682371?v=4" />
+                <h5 style="text-align: center">Pablo Cunha de Jesus</h5>
             </a>
         </td>
 
 </table>
-</center>

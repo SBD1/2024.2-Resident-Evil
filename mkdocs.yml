@@ -1,0 +1,43 @@
+site_name: SBD1 - Resident Evil
+repo_url: https://github.com/SBD1/2024.2-Resident-Evil
+repo_name: 2024.2-Resident-Evil
+
+nav:
+  - Home: index.md
+  - "Primeira Entrega":
+    - "DER": entrega1/DER.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.footer
+
+  disable_nav_previous_next: true
+
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Trocar para modo escuro
+
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Trocar para modo claro
+
+  favicon: assets/favicon.ico
+  logo: assets/favicon.ico
+  
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+
+
+extra_css: [stylesheets/extra.css]
