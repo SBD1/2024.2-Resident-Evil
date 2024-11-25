@@ -1,5 +1,5 @@
 # 2024.2-Resident-Evil
-Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo grupo 7 da disciplina de Sistema de Banco de Dados 1
+Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo grupo 7 da disciplina de Sistema de Banco de Dados 1.
 <div align="center"> <img src="docs\assets\resident_evil.png" height="auto" width="auto"/> </div>
 
 # Sobre o jogo
