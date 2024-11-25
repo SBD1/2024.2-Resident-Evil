@@ -6,6 +6,8 @@ nav:
   - Home: index.md
   - "Primeira Entrega":
     - "DER": entrega1/DER.md
+    - "ME-R": entrega1/ME-R.md
+    - "Dicionário de Dados": entrega1/Dicionario.md
 
 theme:
   name: material
