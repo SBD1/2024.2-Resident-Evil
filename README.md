@@ -3,7 +3,7 @@ Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo
 ![Resident Evil](../assets/resident_evil.png)
 
 # Sobre o jogo
-
+Inspirado na atmosfera icônica de Resident Evil 4, este jogo desafia você a sobreviver em um cenário repleto de perigos e mistérios. Você assume o papel de um agente policial enviado a uma vila isolada na Espanha para cumprir uma missão crucial. A cada movimento, você enfrentará inimigos implacáveis, administrará recursos escassos e explorará ambientes desolados cheios de segredos.
 
 # Colaboradores
 <center>
