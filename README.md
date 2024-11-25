@@ -1,5 +1,6 @@
 # 2024.2-Resident-Evil
 Repositório criado para o desenvolvimento do jogo Resident Evil, realizado pelo grupo 7 da disciplina de Sistema de Banco de Dados 1
+![Resident Evil](../assets/resident_evil.png)
 
 # Sobre o jogo
 
