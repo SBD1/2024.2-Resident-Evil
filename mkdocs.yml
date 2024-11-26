@@ -5,8 +5,9 @@ repo_name: 2024.2-Resident-Evil
 nav:
   - Home: index.md
   - "Primeira Entrega":
-    - "DER": entrega1/DER.md
     - "ME-R": entrega1/ME-R.md
+    - "DER": entrega1/DER.md
+    - "DLD": entrega1/DLD.md
     - "Dicionário de Dados": entrega1/Dicionario.md
 
 theme:
