@@ -14,7 +14,7 @@
 - nome
 
 ### instanciaNPC
-- - <u>idinstancianpc</u> (PK)
+- <u>idinstancianpc</u> (PK)
 
 #### Herdeiros de InstanciaNPC, T.E
 - **Zumbi**
