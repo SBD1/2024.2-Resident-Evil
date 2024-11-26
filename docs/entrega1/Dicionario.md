@@ -8,7 +8,11 @@ Um dicionário de dados em um sistema de banco de dados é uma ferramenta essenc
 </br>
 </br>
 </br>
-![Tabela Contém Arma](../assets/tabela_contem_arma.png)
+![Tabela Usa Arma](../assets/tabela_usa_arma.png)
+</br>
+</br>
+</br>
+![Tabela Entidade](../assets/tabela_entidade.png)
 </br>
 </br>
 </br>
@@ -20,7 +24,7 @@ Um dicionário de dados em um sistema de banco de dados é uma ferramenta essenc
 </br>
 </br>
 </br>
-![Tabela Entidade](../assets/tabela_entidade.png)
+![Tabela Instância NPC](../assets/tabela_instancia_npc.png)
 </br>
 </br>
 </br>
@@ -33,10 +37,6 @@ Um dicionário de dados em um sistema de banco de dados é uma ferramenta essenc
 </br>
 </br>
 ![Tabela Missão](../assets/tabela_missao.png)
-</br>
-</br>
-</br>
-![Tabela Faz Missão](../assets/tabela_faz_missao.png)
 </br>
 </br>
 </br>
@@ -57,5 +57,27 @@ Um dicionário de dados em um sistema de banco de dados é uma ferramenta essenc
 </br>
 </br>
 ![Tabela Recompensa](../assets/tabela_recompensa.png)
+</br>
+</br>
+</br>
+![Tabela Mercado](../assets/tabela_mercado.png)
+</br>
+</br>
+</br>
+![Tabela Zumbi](../assets/tabela_zumbi.png)
+</br>
+</br>
+</br>
+![Tabela Plaga](../assets/tabela_plaga.png)
+</br>
+</br>
+</br>
+![Tabela Cachorro Zumbi](../assets/tabela_cachorro_zumbi.png)
+
+
+| Versão |     Descrição      |                     Autor(es)                     |    Data    |
+| :----: | :----------------: | :-----------------------------------------------: | :--------: |
+|  1.0   | Criação | [Anne de Capdeville](https://github.com/nanecapde) | 24/11/2024 |
+|  1.1   | Atualização | [Anne de Capdeville](https://github.com/nanecapde) | 25/11/2024 |
 
 
