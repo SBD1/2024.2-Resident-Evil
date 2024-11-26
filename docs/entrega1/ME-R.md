@@ -3,94 +3,127 @@
 ## Entidades e Atributos
 
 ### Entidade
-- <u>id</u> (PK)
+- <u>identidade</u> (PK)
+- velocidade
 - dano
 - vida
 
 ### Sala
-- <u>nome</u> (PK)
+- <u>numero</u> (PK)
+- nome
 
-### Protagonista
-- <u>nickname</u> (PK)
+### instanciaNPC
+- - <u>idinstancianpc</u> (PK)
 
-### NPC
-- <u>nome</u> (PK)
+#### Herdeiros de InstanciaNPC, T.E
+- **Zumbi**
+- **Plaga**
+- **Cachorro Zumbi**
+
+### Protagonista (Herdeiro de entidade, T.E)
+- nickname
+- killcount
+- dinheirorecebido
+
+### NPC (Herdeiro de entidade, T.E)
+- nome
 - tipo
 
 ### Arma
 - <u>nome</u> (PK)
 - dano
-- velocidade
 - nivel
 - maxmuni
-- temporecarga
+- precisao{chanceacerto, chanceerro,chancecritico}
+
+### Equipamento
+- <u>nome</u> (PK)
+- defesa
+- nivel
 
 ### Inventário
-- <u>id</u> (PK)
+- <u>idinventario</u> (PK)
+- pesomax
+
+### Mercado (Herdeiro de sala, P.E)
 
 ### Item
-- <u>id</u> (PK)
+- <u>iditem</u> (PK)
 - nome
 - descricao
 - valor
 - tipo
+- peso
 
 ### Missão
-- <u>id</u> (PK)
+- <u>nome</u> (PK)
 - multiplicador
+- completa
 
 ### Mapa
-- <u>nome</u> (PK) 
+- <u>nome</u> (PK)
 
 ## Relacionamentos
 
-### Está
-- Entidade está na Sala
-- Entidade ↔ Sala
-- Cardinalidade: (0,N) ↔ (1,1)
+### Usa (Entidade ↔ Arma)
+- A `Entidade` usa `Arma`.
+- Cardinalidade: `(0,N) ↔ (1,N)`.
 
-### Possui
-- Entidade possui Inventário
-- Entidade ↔ Inventário
-- Cardinalidade: (1,1) ↔ (1,1)
+### Usa (Entidade ↔ Equipamento)
+- A `Entidade` usa `Equipamento`.
+- Cardinalidade: `(0,N) ↔ (0,N)`.
 
-### Faz
-- Protagonista faz Missão
-- Protagonista ↔ Missão
-- Cardinalidade: (0,1) ↔ (0,N)
+### Está (Entidade ↔ Sala)
+- A `Entidade` está em `Sala`.
+- Cardinalidade: `(0,N) ↔ (1,1)`.
 
-### Recompensa
-- Missão oferece Recompensa (Item)
-- Missão ↔ Item
-- Cardinalidade: (0,N) ↔ (1,N)
+### Está (InstanciaNPC ↔ Sala)
+- A `InstanciaNPC` está em uma `Sala`.
+- Cardinalidade: `(0,N) ↔ (0,N)`.
 
-### Possui
-- Inventário possui Item
-- Inventário ↔ Item
-- Cardinalidade: (0,N) ↔ (1,N)
+### Possui (npc ↔ InstanciaNPC)
+- A `npc` possui `InstanciaNPC`.
+- Cardinalidade: `(1,1) ↔ (0,1)`.
 
-### Possui
-- Protagonista possui Arma
-- Protagonista ↔ Arma
-- Cardinalidade: (1,N) ↔ (1,N)
+### Possui (Entidade ↔ Inventário)
+- A `Entidade` possui um `Inventário`.
+- Cardinalidade: `(1,1) ↔ (1,1)`.
 
-### Está
-- Protagonista está na Sala
-- Protagonista ↔ Sala
-- Cardinalidade: (0,N) ↔ (1,1)
+### Faz (Protagonista ↔ Missão)
+- O `Protagonista` faz `Missão`.
+- Cardinalidade: `(0,1) ↔ (0,N)`.
 
-### Está
-- NPC está na Sala
-- NPC ↔ Sala
-- Cardinalidade: (0,N) ↔ (1,1)
+### Recompensa (Missão ↔ Item)
+- `Missão` oferece `Recompensa`, que é um `Item`.
+- Cardinalidade: `(0,N) ↔ (0,N)`.
 
-### Possui
-- Sala possui Mapa
-- Sala ↔ Mapa
-- Cardinalidade: (1,1) ↔ (1,1)
+### Possui (Inventário ↔ Item)
+- O `Inventário` possui `Item`.
+- Cardinalidade: `(0,N) ↔ (0,N)`.
+
+### Contém (Mercado ↔ Item)
+- O `Mercado` contém `Itens`.
+- Cardinalidade: `(1,1) ↔ (1,1)`.
+
+### Compra (Protagonista ↔ Mercado)
+- O `Protagonista` pode comprar no `Mercado`.
+- Cardinalidade: `(0,1) ↔ (0,N)`.
+
+### Possui (Mapa ↔ Sala)
+- `mapa` possui `sala`.
+- Cardinalidade: `(1,1) ↔ (1,N`.
+
+### Possui (Item ↔ Sala)
+-  `item` está em `sala`.
+- Cardinalidade: `(0,N) ↔ (0,N)`.
+
+### Possui (Mapa ↔ Missão)
+- O `mapa` possui `missão`.
+- Cardinalidade: `(1,1) ↔ (0,1)`.
 
 
 ## Histórico de Versão
  | Versão |     Descrição      |                     Autor(es)                     |    Data    |
 | :----: | :----------------: | :-----------------------------------------------: | :--------: |
 |  1.0   | Criação | [Breno Yuri](https://github.com/YuriBre) | 24/11/2024 |
+|  2.0   | Atualizações | [Breno Yuri](https://github.com/YuriBre) | 25/11/2024 |
