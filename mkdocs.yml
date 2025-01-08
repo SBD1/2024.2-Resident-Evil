@@ -10,6 +10,8 @@ nav:
     - "DER": entrega1/DER.md
     - "DLD": entrega1/DLD.md
     - "Dicionário de Dados": entrega1/Dicionario.md
+  - "Segunda Entrega":
+    - "Normalização": entrega2/normalizacao.md 
 
 theme:
   name: material
