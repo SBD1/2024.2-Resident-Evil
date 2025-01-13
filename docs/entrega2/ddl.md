@@ -1,4 +1,4 @@
-# DLL - Data Definition Language
+# DDL - Data Definition Language
 
 Linguagem de definição de dados: São comandos que interagem com objetos dentro de um banco de dados (views, functions, procedures, sendo as tabelas os mais comuns). Os comandos DDL permitem que a gente interaja com esses objetos. As principais formas de interagir com esses objetos é por meio dos comandos:
 
