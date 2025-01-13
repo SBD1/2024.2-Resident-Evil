@@ -4,7 +4,7 @@
 Diagrama lógico de dados (DLD) do projeto de SBD1, Resident Evil.
 
 ### Imagem do DER
-![DER](../assets/dld.png)
+![DLD](../assets/dld.png)
 
 
  | Versão |     Descrição      |                     Autor(es)                     |    Data    |
