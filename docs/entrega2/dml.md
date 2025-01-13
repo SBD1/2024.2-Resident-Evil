@@ -47,12 +47,6 @@ VALUES
 (17,200,15,13),
 (18,100,0,1);
 
-INSERT INTO equipamento(nome, defesa, nivel)
-VALUES
-
-INSERT INTO usa_equipamento(fk_equipamento_nome, fk_entidade_identidade)
-VALUES
-
 
 INSERT INTO protagonista(fk_entidade_identidade, nickname, killcount, dinheirorecebido)
 VALUES
@@ -194,3 +188,4 @@ VALUES
 |  1.0   |  Criação  | [Bruno Cruz](https://github.com/Brunocrzz) | 08/01/2025 |
 |  1.1   | Alteração | [Pablo Cunha](https://github.com/pabloo8)  | 13/01/2025 |
 |  1.2   | Alteração | [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8)  | 13/01/2025 |
+|  1.3   | Alteração | [Pablo Cunha](https://github.com/pabloo8)  | 13/01/2025 |
