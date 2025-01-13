@@ -80,3 +80,4 @@ VALUES
 | Versão |     Descrição      |                     Autor(es)                     |    Data    |
 | :----: | :----------------: | :-----------------------------------------------: | :--------: |
 |  1.0   | Criação | [Bruno Cruz](https://github.com/Brunocrzz) | 08/01/2025 |
+|  1.1   | Alteração | [Pablo Cunha](https://github.com/pabloo8) | 13/01/2025 |
