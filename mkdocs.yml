@@ -15,7 +15,7 @@ nav:
     - "DDL - Data Definition Language": entrega2/ddl.md 
     - "DML - Data Manipulation Language": entrega2/dml.md 
     - "DQL - Data Query Language": entrega2/dql.md 
-    - "Álgebra Relacional": entrega2/algebra-relacional.md
+    - "Álgebra Relacional": entrega2/algebra_relacional.md
 
 theme:
   name: material
