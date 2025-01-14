@@ -290,6 +290,6 @@ ALTER TABLE esta_npc
 
 | Versão |     Descrição      |                     Autor(es)                     |    Data    |
 | :----: | :----------------: | :-----------------------------------------------: | :--------: |
-|  1.0   | Criação | [Bruno Cruz](https://github.com/Brunocrzz) | 08/01/2025 |
+|  1.0   | Criação | [Bruno Cruz](https://github.com/Brunocrzz) e [Breno Yuri](https://github.com/YuriBre)| 08/01/2025 |
 |  1.1   | Inserção de informação | [José Oliveira](https://github.com/Jose1277) | 13/01/2025 |
 |  1.2   | Alterações | [Anne de Capdeville](https://github.com/nanecapde) | 13/01/2025 |
