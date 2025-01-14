@@ -6,7 +6,7 @@ Apresentação do grupo Resident Evil, com o objetivo de mostrar a entrega 2 pro
 
 ### Imagem do DER
 
-[link do video]()
+[link do video](https://www.youtube.com/watch?v=SPZCcWC2pIY)
 
 | Versão | Descrição |                     Autor(es)                      |    Data    |
 | :----: | :-------: | :------------------------------------------------: | :--------: |
