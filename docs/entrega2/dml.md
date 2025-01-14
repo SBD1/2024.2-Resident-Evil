@@ -188,4 +188,4 @@ VALUES
 |  1.0   |  Criação  | [Bruno Cruz](https://github.com/Brunocrzz) | 08/01/2025 |
 |  1.1   | Alteração | [Pablo Cunha](https://github.com/pabloo8)  | 13/01/2025 |
 |  1.2   | Alteração | [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8)  | 13/01/2025 |
-|  1.3   | Alteração | [Pablo Cunha](https://github.com/pabloo8)  | 13/01/2025 |
+|  1.3   | Alteração | [Pablo Cunha](https://github.com/pabloo8) e [Anne de Capdeville](https://github.com/nanecapde) | 13/01/2025 |
