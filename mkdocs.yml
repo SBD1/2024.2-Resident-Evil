@@ -5,17 +5,17 @@ repo_name: 2024.2-Resident-Evil
 nav:
   - Home: index.md
   - "Primeira Entrega":
-    - "Video": entrega1/video.md
-    - "ME-R": entrega1/ME-R.md
-    - "DER": entrega1/DER.md
-    - "DLD": entrega1/DLD.md
-    - "Dicionário de Dados": entrega1/Dicionario.md
+      - "Video": entrega1/video.md
+      - "ME-R": entrega1/ME-R.md
+      - "DER": entrega1/DER.md
+      - "DLD": entrega1/DLD.md
+      - "Dicionário de Dados": entrega1/Dicionario.md
   - "Segunda Entrega":
-    - "Normalização": entrega2/normalizacao.md 
-    - "DDL - Data Definition Language": entrega2/ddl.md 
-    - "DML - Data Manipulation Language": entrega2/dml.md 
-    - "DQL - Data Query Language": entrega2/dql.md 
-    - "Álgebra Relacional": entrega2/algebra_relacional.md
+      - "Normalização": entrega2/normalizacao.md
+      - "DDL - Data Definition Language": entrega2/ddl.md
+      - "DML - Data Manipulation Language": entrega2/dml.md
+      - "DQL - Data Query Language": entrega2/dql.md
+      - "Álgebra Relacional": entrega2/algebra-relacional.md
 
 theme:
   name: material
@@ -29,10 +29,10 @@ theme:
 
   disable_nav_previous_next: true
 
-  palette: 
+  palette:
     - scheme: default
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Trocar para modo escuro
 
     - scheme: slate
@@ -42,12 +42,10 @@ theme:
 
   favicon: assets/favicon.ico
   logo: assets/favicon.ico
-  
 
 markdown_extensions:
   - tables
   - attr_list
   - md_in_html
-
 
 extra_css: [stylesheets/extra.css]
