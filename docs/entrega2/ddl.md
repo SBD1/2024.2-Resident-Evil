@@ -8,6 +8,7 @@ Linguagem de definição de dados: São comandos que interagem com objetos dentr
 
 ### CREATE
 
+
 ```sql
 
 CREATE TABLE sala (
