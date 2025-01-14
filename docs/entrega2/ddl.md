@@ -6,8 +6,9 @@ Linguagem de definição de dados: São comandos que interagem com objetos dentr
 + **ALTER**: Altera um objeto existente.
 + **DROP**: Exclui um objeto, como uma tabela ou banco de dados.
 
-```
 ###CREATE
+
+```
 
 CREATE TABLE sala (
     idsala INT auto_increment,
@@ -122,9 +123,10 @@ CREATE TABLE esta_npc (
     id_sala INT,
     PRIMARY KEY (id_instanciaNPC, id_sala)
 );
-
+´´´
 ###ALTER
 
+```
 ALTER TABLE sala
   ADD PRIMARY KEY (idsala);
 
