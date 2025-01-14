@@ -7,6 +7,7 @@ Linguagem de definição de dados: São comandos que interagem com objetos dentr
 + **DROP**: Exclui um objeto, como uma tabela ou banco de dados.
 
 ```
+###CREATE
 
 CREATE TABLE sala (
     idsala INT auto_increment,
@@ -121,6 +122,8 @@ CREATE TABLE esta_npc (
     id_sala INT,
     PRIMARY KEY (id_instanciaNPC, id_sala)
 );
+
+###ALTER
 
 ALTER TABLE sala
   ADD PRIMARY KEY (idsala);
@@ -285,4 +288,4 @@ ALTER TABLE esta_npc
 | :----: | :----------------: | :-----------------------------------------------: | :--------: |
 |  1.0   | Criação | [Bruno Cruz](https://github.com/Brunocrzz) | 08/01/2025 |
 |  1.1   | Inserção de informação | [José Oliveira](https://github.com/Jose1277) | 13/01/2025 |
-
+|  1.2   | Alterações | [Anne de Capdeville](https://github.com/nanecapde) | 13/01/2025 |
