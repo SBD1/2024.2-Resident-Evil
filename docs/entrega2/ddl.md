@@ -8,284 +8,271 @@ Linguagem de definição de dados: São comandos que interagem com objetos dentr
 
 ### CREATE
 
-
 ```sql
-
 CREATE TABLE sala (
-    idsala INT auto_increment,
-    nome VARCHAR(30),
-    nome_mapa VARCHAR(30)
+    numero int PRIMARY KEY,
+    nome varchar(30),
+    nome_mapa varchar(30)
 );
 
 CREATE TABLE entidade (
-    identidade INT auto_increment,
-    vida INT,
-    dano INT,
-    id_sala INT
+    identidade int auto_increment PRIMARY KEY,
+    vida int,
+    dano int
 );
 
 CREATE TABLE protagonista (
-    id_entidade INT,
-    nickname VARCHAR(25),
-    killcount INT,
-    dinheirorecebido INT
+    id_entidade int PRIMARY KEY,
+    nickname varchar(25),
+    killcount int,
+    dinheirorecebido int,
+    fk_sala_numero int
 );
 
 CREATE TABLE npc (
-    id_entidade INT,
-    nome VARCHAR(25),
-    tipo ENUM('hostil', 'pacifico')
-);
-
-CREATE TABLE mapa (
-    nome VARCHAR(30)
+    nome varchar(20),
+    tipo enum('chefe', 'vendedor', 'zumbi', 'plaga', 'cachorro_zumbi'),
+    id_entidade int PRIMARY KEY
 );
 
 CREATE TABLE item (
-    iditem INT auto_increment,
-    nome VARCHAR(20),
-    descricao VARCHAR(255),
-    valor INT,
-    peso INT,
-    tipo VARCHAR(20)
+    iditem int auto_increment PRIMARY KEY,
+    nome varchar(30),
+    descricao varchar(150),
+    valor int,
+    peso int,
+    tipo enum('arma','consumivel','equipamento','dinheiro')
 );
 
 CREATE TABLE inventario (
-    idinventario INT auto_increment,
-    pesomax INT,
-    id_entidade INT,
-    id_mercado INT
+    idinventario int auto_increment PRIMARY KEY,
+    pesomax int,
+    id_entidade int,
+    id_instancianpc int
 );
 
 CREATE TABLE arma (
-    nome VARCHAR(20),
-    dano INT,
-    nivel INT,
-    chanceacerto DECIMAL(4,2),
-    chanceerro DECIMAL(4,2),
-    chancecritico DECIMAL(4,2),
-    maxmuni INT
+    dano int,
+    nivel int,
+    chanceerro int,
+    chancecritico int,
+    maxmuni int,
+    id_item int PRIMARY KEY
 );
 
 CREATE TABLE missao (
-    nome VARCHAR(30),
-    multiplicador INT,
-    completa BOOLEAN,
-    nome_mapa VARCHAR(30),
-    id_protagonista INT
+    nome varchar(30) PRIMARY KEY,
+    multiplicador int,
+    completa bool,
+    tipo enum('assassinato','recuperacao'),
+    missao_TIPO INT,
+    nome_mapa varchar(30)
 );
 
-CREATE TABLE instanciaNPC (
-    idinstancianpc INT auto_increment,
-    id_entidade INT
+CREATE TABLE equipamento (
+    defesa int,
+    nivel int,
+    id_item int PRIMARY KEY
 );
 
-CREATE TABLE Zumbi (
-    id_instanciaNPC INT
+CREATE TABLE instancianpc (
+    idinstancianpc int auto_increment PRIMARY KEY,
+    id_entidadenpc int,
+    fk_sala_numero int,
+    missao_nome varchar(30),
+    id_protagonista int
 );
 
-CREATE TABLE Cachorro_Zumbi (
-    id_instanciaNPC INT
+CREATE TABLE zumbi (
+    id_entidade int PRIMARY KEY
 );
 
-CREATE TABLE Plaga (
-    id_instanciaNPC INT
+CREATE TABLE cachorro_zumbi (
+    id_entidade int PRIMARY KEY
 );
 
-CREATE TABLE mercado (
-    id_sala INT,
-    id_entidade INT
+CREATE TABLE plaga (
+    id_entidade int PRIMARY KEY
 );
 
-CREATE TABLE possui (
-    id_inventario INT,
-    id_item INT,
-    quantidade INT
+CREATE TABLE consumivel (
+    efeito varchar(50),
+    id_item int PRIMARY KEY
 );
 
-CREATE TABLE esta_item (
-    id_item INT,
-    id_sala INT
+CREATE TABLE instanciaitem (
+    idinstanciaitem int auto_increment PRIMARY KEY,
+    id_item int,
+    id_inventaro int,
+    nome_missao varchar(30)
 );
 
-CREATE TABLE usa_arma (
-    nome_arma VARCHAR(20),
-    id_entidade INT,
-    PRIMARY KEY (nome_arma, id_entidade)
+CREATE TABLE dinheiro (
+    valor int,
+    id_item int PRIMARY KEY
 );
 
-CREATE TABLE recompensa (
-    nome_missao VARCHAR(30),
-    id_item INT
+CREATE TABLE mapa (
+    nome varchar(30) PRIMARY KEY
 );
 
-CREATE TABLE esta_npc (
-    id_instanciaNPC INT,
-    id_sala INT,
-    PRIMARY KEY (id_instanciaNPC, id_sala)
+CREATE TABLE vendedor (
+    id_entidade int PRIMARY KEY
 );
 
-```
-### ALTER
+CREATE TABLE reputacao (
+    nivel_reputacao int,
+    id_entidade int PRIMARY KEY
+);
 
-```sql
-ALTER TABLE sala
-  ADD PRIMARY KEY (idsala);
+CREATE TABLE habilidade (
+    nome varchar(50) PRIMARY KEY,
+    tempo_recarga_turno int,
+    tempo_recarga_tempo int,
+    dano int
+);
 
-ALTER TABLE entidade
-  ADD PRIMARY KEY (identidade);
+CREATE TABLE chefe (
+    id_entidade int PRIMARY KEY
+);
 
-ALTER TABLE protagonista
-  ADD PRIMARY KEY (id_entidade);
+CREATE TABLE usa (
+    id_entidade int PRIMARY KEY,
+    nome_habilidade varchar(50),
+    nivel int,
+    ultimo_uso DATETIME
+);
+ 
+ALTER TABLE sala ADD CONSTRAINT FK_sala_2
+    FOREIGN KEY (nome_mapa)
+    REFERENCES mapa (nome)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE protagonista ADD CONSTRAINT FK_protagonista_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES entidade (identidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE protagonista ADD CONSTRAINT FK_protagonista_3
+    FOREIGN KEY (fk_sala_numero)
+    REFERENCES sala (numero)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE npc ADD CONSTRAINT FK_npc_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES entidade (identidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE inventario ADD CONSTRAINT FK_inventario_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES protagonista (id_entidade)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE inventario ADD CONSTRAINT FK_inventario_3
+    FOREIGN KEY (id_instancianpc)
+    REFERENCES instancianpc (idinstancianpc)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE arma ADD CONSTRAINT FK_arma_2
+    FOREIGN KEY (id_item)
+    REFERENCES item (iditem)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE missao ADD CONSTRAINT FK_missao_2
+    FOREIGN KEY (nome_mapa)
+    REFERENCES mapa (nome)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE equipamento ADD CONSTRAINT FK_equipamento_2
+    FOREIGN KEY (id_item)
+    REFERENCES item (iditem)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE instancianpc ADD CONSTRAINT FK_instancianpc_2
+    FOREIGN KEY (id_entidadenpc)
+    REFERENCES npc (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE instancianpc ADD CONSTRAINT FK_instancianpc_3
+    FOREIGN KEY (fk_sala_numero)
+    REFERENCES sala (numero)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE instancianpc ADD CONSTRAINT FK_instancianpc_4
+    FOREIGN KEY (missao_nome)
+    REFERENCES missao (nome)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE instancianpc ADD CONSTRAINT FK_instancianpc_5
+    FOREIGN KEY (id_protagonista)
+    REFERENCES protagonista (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE zumbi ADD CONSTRAINT FK_zumbi_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES npc (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE cachorro_zumbi ADD CONSTRAINT FK_cachorro_zumbi_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES npc (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE plaga ADD CONSTRAINT FK_plaga_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES npc (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE consumivel ADD CONSTRAINT FK_consumivel_2
+    FOREIGN KEY (id_item)
+    REFERENCES item (iditem)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_1
+    FOREIGN KEY (id_item)
+    REFERENCES item (iditem)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_2
+    FOREIGN KEY (id_inventaro)
+    REFERENCES inventario (idinventario)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_3
+    FOREIGN KEY (nome_missao, nome_missao)
+    REFERENCES missao (nome, nome)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE dinheiro ADD CONSTRAINT FK_dinheiro_2
+    FOREIGN KEY (id_item)
+    REFERENCES item (iditem)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE vendedor ADD CONSTRAINT FK_vendedor_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES npc (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE reputacao ADD CONSTRAINT FK_reputacao_1
+    FOREIGN KEY (id_entidade)
+    REFERENCES protagonista (id_entidade)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE chefe ADD CONSTRAINT FK_chefe_2
+    FOREIGN KEY (id_entidade)
+    REFERENCES npc (id_entidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE usa ADD CONSTRAINT FK_usa_1
+    FOREIGN KEY (id_entidade)
+    REFERENCES protagonista (id_entidade)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE usa ADD CONSTRAINT FK_usa_2
+    FOREIGN KEY (nome_habilidade)
+    REFERENCES habilidade (nome)
+    ON DELETE SET NULL;
 
-ALTER TABLE npc
-  ADD PRIMARY KEY (id_entidade);
-
-ALTER TABLE mapa
-  ADD PRIMARY KEY (nome);
-
-ALTER TABLE item
-  ADD PRIMARY KEY (iditem);
-
-ALTER TABLE inventario
-  ADD PRIMARY KEY (idinventario);
-
-ALTER TABLE arma
-  ADD PRIMARY KEY (nome);
-
-ALTER TABLE missao
-  ADD PRIMARY KEY (nome);
-
-ALTER TABLE instanciaNPC
-  ADD PRIMARY KEY (idinstancianpc);
-
-ALTER TABLE Zumbi
-  ADD PRIMARY KEY (id_instanciaNPC);
-
-ALTER TABLE Cachorro_Zumbi
-  ADD PRIMARY KEY (id_instanciaNPC);
-
-ALTER TABLE Plaga
-  ADD PRIMARY KEY (id_instanciaNPC);
-
-ALTER TABLE mercado
-  ADD PRIMARY KEY (id_entidade);
-
-ALTER TABLE possui
-  ADD PRIMARY KEY (id_inventario, id_item);
-
-ALTER TABLE esta_item
-  ADD PRIMARY KEY (id_item, id_sala);
-
-ALTER TABLE entidade
-  ADD CONSTRAINT fk_entidade_sala
-      FOREIGN KEY (id_sala)
-      REFERENCES sala (idsala);
-
-ALTER TABLE protagonista
-  ADD CONSTRAINT fk_protagonista_entidade
-      FOREIGN KEY (id_entidade)
-      REFERENCES entidade (identidade);
-
-ALTER TABLE npc
-  ADD CONSTRAINT fk_npc_entidade
-      FOREIGN KEY (id_entidade)
-      REFERENCES entidade (identidade);
-
-ALTER TABLE missao
-  ADD CONSTRAINT fk_missao_protagonista
-      FOREIGN KEY (id_protagonista)
-      REFERENCES protagonista (id_entidade);
-
-ALTER TABLE missao
-  ADD CONSTRAINT fk_missao_mapa
-      FOREIGN KEY (nome_mapa)
-      REFERENCES mapa (nome);
-
-ALTER TABLE inventario
-  ADD CONSTRAINT fk_inventario_entidade
-      FOREIGN KEY (id_entidade)
-      REFERENCES entidade (identidade);
-
-ALTER TABLE instanciaNPC
-  ADD CONSTRAINT fk_instanciaNPC_entidade
-      FOREIGN KEY (id_entidade)
-      REFERENCES entidade (identidade);
-
-ALTER TABLE Zumbi
-  ADD CONSTRAINT fk_zumbi_instanciaNPC
-      FOREIGN KEY (id_instanciaNPC)
-      REFERENCES instanciaNPC (idinstancianpc);
-
-ALTER TABLE Plaga
-  ADD CONSTRAINT fk_plaga_instanciaNPC
-      FOREIGN KEY (id_instanciaNPC)
-      REFERENCES instanciaNPC (idinstancianpc);
-
-ALTER TABLE Cachorro_Zumbi
-  ADD CONSTRAINT fk_cachorro_zumbi_instanciaNPC
-      FOREIGN KEY (id_instanciaNPC)
-      REFERENCES instanciaNPC (idinstancianpc);
-
-ALTER TABLE mercado
-  ADD CONSTRAINT fk_mercado_sala
-      FOREIGN KEY (id_sala)
-      REFERENCES sala (idsala);
-
-ALTER TABLE mercado
-  ADD CONSTRAINT fk_mercado_entidade
-      FOREIGN KEY (id_entidade)
-      REFERENCES entidade (identidade);
-
-ALTER TABLE possui
-  ADD CONSTRAINT fk_possui_inventario
-      FOREIGN KEY (id_inventario)
-      REFERENCES inventario (idinventario);
-
-ALTER TABLE possui
-  ADD CONSTRAINT fk_possui_item
-      FOREIGN KEY (id_item)
-      REFERENCES item (iditem);
-
-ALTER TABLE esta_item
-  ADD CONSTRAINT fk_esta_item_item
-      FOREIGN KEY (id_item)
-      REFERENCES item (iditem);
-
-ALTER TABLE esta_item
-  ADD CONSTRAINT fk_esta_item_sala
-      FOREIGN KEY (id_sala)
-      REFERENCES sala (idsala);
-
-ALTER TABLE usa_arma
-  ADD CONSTRAINT fk_usa_arma_arma
-      FOREIGN KEY (nome_arma)
-      REFERENCES arma (nome);
-
-ALTER TABLE usa_arma
-  ADD CONSTRAINT fk_usa_arma_entidade
-      FOREIGN KEY (id_entidade)
-      REFERENCES entidade (identidade);
-
-ALTER TABLE recompensa
-  ADD CONSTRAINT fk_recompensa_missao
-      FOREIGN KEY (nome_missao)
-      REFERENCES missao (nome);
-
-ALTER TABLE recompensa
-  ADD CONSTRAINT fk_recompensa_item
-      FOREIGN KEY (id_item)
-      REFERENCES item (iditem);
-
-ALTER TABLE esta_npc
-  ADD CONSTRAINT fk_esta_npc_instanciaNPC
-      FOREIGN KEY (id_instanciaNPC)
-      REFERENCES instanciaNPC (idinstancianpc);
-
-ALTER TABLE esta_npc
-  ADD CONSTRAINT fk_esta_npc_sala
-      FOREIGN KEY (id_sala)
-      REFERENCES sala (idsala);
 ```
 
 | Versão |     Descrição      |                     Autor(es)                     |    Data    |
@@ -293,3 +280,4 @@ ALTER TABLE esta_npc
 |  1.0   | Criação | [Bruno Cruz](https://github.com/Brunocrzz) e [Breno Yuri](https://github.com/YuriBre)| 08/01/2025 |
 |  1.1   | Inserção de informação | [José Oliveira](https://github.com/Jose1277) | 13/01/2025 |
 |  1.2   | Alterações | [Anne de Capdeville](https://github.com/nanecapde) | 13/01/2025 |
+|  1.3   | Alterações | [José Oliveira](https://github.com/jose1277) | 31/01/2025 |
