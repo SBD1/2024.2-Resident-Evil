@@ -1,9 +1,11 @@
-//index.js
-(async () => {
-  const db = require("database/db");
-  console.log("Começou!");
+const db = require('./database/db');
 
-  console.log("SELECT * FROM CLIENTES");
-  const clientes = await db.selectCustomers();
-  console.log(clientes);
-})();
+db.query('select * from protagonista' , (error, result) => {
+    if (error) {
+        console.error(error);
+        return;
+    }
+
+    console.log(result);
+}
+);

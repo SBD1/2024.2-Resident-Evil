@@ -1,21 +1,35 @@
-async function connect() {
-  if (global.connection && global.connection.state !== "disconnected")
-    return global.connection;
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
-  const mysql = require("mysql2/promise");
-  const connection = await mysql.createConnection(
-    "mysql://root:1234@localhost:3306/resident_evil"
-  );
-  console.log("Conectou no MySQL!");
-  global.connection = connection;
-  return connection;
-}
+const mysql = require('mysql2');
 
-async function selectCustomers() {
-  const conn = await connect();
-  const [rows] = await conn.query("SELECT * FROM teste;");
-  return rows;
-}
+const poolConfig = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    waitForConnections: true,
+    connectionLimit: process.env.DB_CONNECTION_LIMIT || 10,
+    queueLimit: 0
+};
 
-const con = connect();
-(module.exports = con), { selectCustomers };
+const pool = mysql.createPool(poolConfig);
+
+pool.getConnection((error, connection) => {
+    if (error) {
+        if (error.code === 'PROTOCOL_CONNECTION_LOST') {
+            console.error('A conexão com o banco de dados foi fechada.');
+        } else if (error.code === 'ER_CON_COUNT_ERROR') {
+            console.error('O banco de dados tem muitas conexões.');
+        } else if (error.code === 'ECONNREFUSED') {
+            console.error('A conexão com o banco de dados foi recusada.');
+        }
+    }
+
+    if (connection) connection.release();
+});
+
+console.log('Pool de conexões ao banco de dados estabelecido com sucesso.');
+
+module.exports = pool;
