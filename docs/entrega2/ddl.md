@@ -64,9 +64,10 @@ CREATE TABLE missao (
     nome varchar(30) PRIMARY KEY,
     multiplicador int,
     completa bool,
-    tipo enum('assassinato','recuperacao'),
+    tipo enum('assassinato','recuperacao','dupla'),
     missao_TIPO INT,
-    nome_mapa varchar(30)
+    nome_mapa varchar(30),
+    descricao varchar(150)
 );
 
 CREATE TABLE equipamento (
