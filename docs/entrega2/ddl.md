@@ -9,6 +9,10 @@ Linguagem de definição de dados: São comandos que interagem com objetos dentr
 ### CREATE
 
 ```sql
+CREATE TABLE mapa (
+    nome varchar(30) PRIMARY KEY
+);
+
 CREATE TABLE sala (
     numero int PRIMARY KEY,
     nome varchar(30),
@@ -42,10 +46,6 @@ CREATE TABLE item (
     valor int,
     peso int,
     tipo enum('arma','consumivel','equipamento','dinheiro')
-);
-
-CREATE TABLE mapa (
-    nome varchar(30) PRIMARY KEY
 );
 
 CREATE TABLE missao (
@@ -149,6 +149,12 @@ CREATE TABLE cachorro_zumbi (
 
 CREATE TABLE plaga (
     id_entidade int PRIMARY KEY
+);
+
+CREATE TABLE caminho (
+    sala_atual INT,
+    prox_sala INT,
+    PRIMARY KEY (sala_atual, prox_sala)
 );
 
 ALTER TABLE sala ADD CONSTRAINT FK_sala_2
@@ -281,6 +287,16 @@ ALTER TABLE usa ADD CONSTRAINT FK_usa_2
     REFERENCES habilidade (nome)
     ON DELETE SET NULL;
 
+ALTER TABLE caminho ADD CONSTRAINT FK_caminho_2
+    FOREIGN KEY (sala_atual)
+    REFERENCES sala (numero)
+    ON DELETE CASCADE;
+
+ALTER TABLE caminho ADD CONSTRAINT FK_camihno_3
+    FOREIGN KEY (prox_sala)
+    REFERENCES sala (numero)
+    ON DELETE CASCADE;
+    
 ```
 
 | Versão |       Descrição        |                                                                 Autor(es)                                                                  |    Data    |
