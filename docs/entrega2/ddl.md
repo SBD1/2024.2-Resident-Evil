@@ -69,7 +69,7 @@ CREATE TABLE instancianpc (
 CREATE TABLE inventario (
     idinventario int auto_increment PRIMARY KEY,
     pesomax int,
-    id_entidade int,
+    id_protagonista int,
     id_instancianpc int
 );
 
@@ -131,12 +131,10 @@ CREATE TABLE usa (
 );
 
 
-
-
 CREATE TABLE instanciaitem (
     idinstanciaitem int auto_increment PRIMARY KEY,
     id_item int,
-    id_inventaro int,
+    id_inventario int,
     nome_missao varchar(30)
 );
 
@@ -244,13 +242,13 @@ ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_1
     ON DELETE CASCADE;
 
 ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_2
-    FOREIGN KEY (id_inventaro)
+    FOREIGN KEY (id_inventario)
     REFERENCES inventario (idinventario)
     ON DELETE SET NULL;
 
 ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_3
-    FOREIGN KEY (nome_missao, nome_missao)
-    REFERENCES missao (nome, nome)
+    FOREIGN KEY (nome_missao)
+    REFERENCES missao (nome)
     ON DELETE CASCADE;
 
 ALTER TABLE dinheiro ADD CONSTRAINT FK_dinheiro_2

@@ -71,7 +71,8 @@ VALUES
     (15,400,15),
     (16,150,15),
     (17,100,0),
-    (18,100,0);
+    (18,100,0),
+    (19,350,25);
 
 
 INSERT INTO protagonista(id_entidade, nickname, killcount, dinheirorecebido,fk_sala_numero)
@@ -95,13 +96,14 @@ VALUES
     (13, "El salvador", "zumbi"),
     (14, "Armadura", "plaga"),
     (15, "Krauser", "chefe"),
-    (16, "Soldado", "Zumbi");
+    (16, "Soldado", "Zumbi"),
+    (19, 'Bitores Mendez', 'chefe');
 
 INSERT INTO item (iditem, nome, descricao, valor, peso, tipo)
 VALUES
     (1,"Chave Igreja","Chave para a abrir a Igreja na Vila",0,0,"consumivel"),
     (2,"Chave da Câmara","Chave para a câmara de Salazar no Castelo",0,0,"consumivel"),
-    (3,"Chave da Sala de Controle","Chave para a Sala de Controle na Ilha",0,0,"consumivel"),
+    (3,"Cartão de acesso","Cartão de acesso para a Sala de Controle na Ilha",0,0,"consumivel"),
     (4,"Erva Verde","Erva medicinal que pode curar 25 de vida.",10,5,"consumivel"),
     (5,"Spray Medicinal","Spray, cura toda a vida",20,5,"consumivel"),
     (6,"Ovo Branco","Ovo Branco de galinha, cura 5 de vida",5,1,"consumivel"),
@@ -152,15 +154,25 @@ VALUES
     (1,1,33,NULL, NULL),
     (2,1,34,NULL, NULL),
     (3,1,35,NULL, NULL),
-    (4,1,36,NULL, NULL);
+    (4,1,36,NULL, NULL),
+    (11,19,8,'Chefe da Vila', NULL),
+    (10,15,29,'Antigos Aliados', NULL),
+    (9,12,24,'Controle', NULL),
+    (8,11,31,'Fim do culto', NULL),
+    (7,10,20,'Salazar', NULL),
+    (6,9,15,'Verdugo', NULL),
+    (5,8,5,'El gigante', NULL);
 
-INSERT INTO inventario(idinventario, pesomax, id_entidade, id_instancianpc)
+INSERT INTO inventario(idinventario, pesomax, id_protagonista, id_instancianpc)
 VALUES
     (1,99999,NULL,1),
     (2,99999,NULL,2),
     (3,99999,NULL,3),
     (4,99999,NULL,4),
-    (5,150,17,NULL);
+    (5,150,17,NULL),
+    (6,150,NULL,5),
+    (7,150,NULL,6),
+    (8,150,NULL,9);
 
 INSERT INTO arma(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni)
 VALUES
@@ -217,49 +229,50 @@ VALUES
     (10),
     (11),
     (12),
-    (15);
+    (15),
+    (19);
 
 INSERT INTO usa (id_entidade,nome_habilidade,nivel,ultimo_uso)
 VALUES
     (17,"chute rasteiro",1,null);
 
 
-
-
-
-
-INSERT INTO possui(fk_inventario_idinventario, fk_item_iditem, quantidade)
-VALUES
-    (31,5,3),
-    (31,4,5),
-    (32,5,3),
-    (32,4,5),
-    (33,5,3),
-    (33,4,5);
-
 INSERT INTO instanciaitem(idinstanciaitem, id_item, id_inventario, nome_missao)
 VALUES
+    (1, 16, 5, NULL),
+    (2, 1, 6, 'El gigante'),
+    (3, 2, 7, 'Verdugo'),
+    (4, 3, 8, 'Controle');
+
 
 INSERT INTO zumbi (id_entidade)
 VALUES
-    ()
+    (2),
+    (3),
+    (4),
+    (5),
+    (13),
+    (16);
 
 INSERT INTO cachorro_zumbi (id_entidade)
 VALUES
+    (7);
 
 INSERT INTO plaga (id_entidade)
 VALUES
-
+    (6),
+    (14);
 
 
 
 ```
 
-| Versão | Descrição |                                           Autor(es)                                            |    Data    |
-| :----: | :-------: | :--------------------------------------------------------------------------------------------: | :--------: |
-|  1.0   |  Criação  |                           [Bruno Cruz](https://github.com/Brunocrzz)                           | 08/01/2025 |
-|  1.1   | Alteração |                           [Pablo Cunha](https://github.com/pabloo8)                            | 13/01/2025 |
-|  1.2   | Alteração |     [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8)     | 13/01/2025 |
-|  1.3   | Alteração | [Pablo Cunha](https://github.com/pabloo8) e [Anne de Capdeville](https://github.com/nanecapde) | 13/01/2025 |
-|  2.0   | Alteração |                           [Bruno Cruz](https://github.com/Brunocrzz)                           | 01/02/2025 |
-|  2.1   | Alteração |                       [Anne de Capdeville](https://github.com/nanecapde)                       | 02/02/2025 |
+| Versão | Descrição |                                                                 Autor(es)                                                                  |    Data    |
+| :----: | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :--------: |
+|  1.0   |  Criação  |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 08/01/2025 |
+|  1.1   | Alteração |                                                 [Pablo Cunha](https://github.com/pabloo8)                                                  | 13/01/2025 |
+|  1.2   | Alteração |                           [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8)                           | 13/01/2025 |
+|  1.3   | Alteração |                       [Pablo Cunha](https://github.com/pabloo8) e [Anne de Capdeville](https://github.com/nanecapde)                       | 13/01/2025 |
+|  2.0   | Alteração |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 01/02/2025 |
+|  2.1   | Alteração |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 02/02/2025 |
+|  3.0   | DML final | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
