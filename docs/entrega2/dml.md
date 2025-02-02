@@ -52,15 +52,6 @@ VALUES
     (35, 'Mercado', 'Ilha'),
     (36, 'Mercado', 'Ilha');
 
-INSERT INTO arma(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni)
-VALUES
-    (16,"Faca de Combate",10,1,0.00,10.00,null),
-    (17,"Pistola",15,1,10.00,20.00,15),
-    (18,"Escopeta",40,1,30.00,5.00,8),
-    (19,"Rifle",35,1,8.00,10.00,30),
-    (20,"Sniper",60,1,3.00,25.00,5),
-    (21,"Lança Foguete",200,1,30.00,10.00,1);
-
 INSERT INTO entidade(identidade, vida, dano)
 VALUES
     (1,10,0),
@@ -85,9 +76,7 @@ VALUES
 
 INSERT INTO protagonista(id_entidade, nickname, killcount, dinheirorecebido,fk_sala_numero)
 VALUES
-    (17,"brunoc",0,0,1),
-    (04,"anne",0,0,1);
-
+    (17,"brunoc",0,0,1);
 
 INSERT INTO npc(id_entidade, nome, tipo)
 VALUES
@@ -108,60 +97,11 @@ VALUES
     (15, "Krauser", "chefe"),
     (16, "Soldado", "Zumbi");
 
-INSERT INTO mercado(fk_sala_numero, fk_protagonista_fk_entidade_identidade)
-VALUES
-    (33,NULL),
-    (34,NULL),
-    (35,NULL),
-    (36,NULL);
-
-INSERT INTO missao(nome, multiplicador, completa, tipo, missao_TIPO, nome_mapa, descricao)
-VALUES
-    ("Boas vindas",1,0,"assassinato",1,"vila","Mate seu primeiro Ganado"),
-    ("A Procura",1,0,"recuperacao",2,"vila","Entre na igreja, e encontre Ashley"),
-    ("El gigante",2,0,"dupla",3,"vila","Mate o El Gigante e recupere a chave da igreja"),
-    ("Las Plagas",1,0,"assassinato",1,"vila","Mate duas plagas"),
-    ("Chefe da Vila",3,0,"assassinato",1,"vila","Mate Bitores Mendez"),
-
-    ("Armaduras",2,0,"assassinato",1,"castelo","Mate as 3 armaduras e entre na câmara de Salazar"),
-    ("Recuperacao",2,0,"recuperacao",2,"castelo","Pegue a chave da câmara na sala de tortura"),
-    ("Verdugo",3,0,"dupla",3,"castelo","Mate o Verdugo e recupere a chave da câmara"),
-    ("Salazar",4,0,"assassinato",1,"castelo","Mate Salazar"),
-
-    ("Antigos Aliados",5,0,"assassinato",1,"ilha","Derrote Krauser"),
-    ("Controle",5,0,"dupla",3,"ilha","Mate o regenerator e recupere a o cartão de acesso à sala de controle"),
-    ("Soldados!",3,0,"assassinato",1,"ilha","Mate todos os 6 soldados que estão na Fábrica de Armas"),
-    ("Fim do culto",6,0,"assassinato",1,"ilha","Mate o chefe do Los Illuminados e acabe com o culto");
-
-
-INSERT INTO inventario(idinventario, pesomax, fk_entidade_identidade, fk_mercado_fk_sala_numero)
-VALUES
-    (1,99999,NULL,31),
-    (1,99999,NULL,32),
-    (1,99999,NULL,33);
-
-INSERT INTO consumivel (id_item, efeito)
-VALUES
-     (4,"Cura 25 de vida"),
-    (5,"Cura toda a vida"),
-    (6,"Cura 5 de vida"),
-    (7,"Cura 15 de vida"),
-    (8,"Cura 30 de vida");
-
-INSERT INTO possui(fk_inventario_idinventario, fk_item_iditem, quantidade)
-VALUES
-    (31,5,3),
-    (31,4,5),
-    (32,5,3),
-    (32,4,5),
-    (33,5,3),
-    (33,4,5);
-
 INSERT INTO item (iditem, nome, descricao, valor, peso, tipo)
 VALUES
     (1,"Chave Igreja","Chave para a abrir a Igreja na Vila",0,0,"consumivel"),
     (2,"Chave da Câmara","Chave para a câmara de Salazar no Castelo",0,0,"consumivel"),
-    (3,"Chave da Sala de Controle","Chave para a Sala de Controle na Ilha",0,0,"equipamento"),
+    (3,"Chave da Sala de Controle","Chave para a Sala de Controle na Ilha",0,0,"consumivel"),
     (4,"Erva Verde","Erva medicinal que pode curar 25 de vida.",10,5,"consumivel"),
     (5,"Spray Medicinal","Spray, cura toda a vida",20,5,"consumivel"),
     (6,"Ovo Branco","Ovo Branco de galinha, cura 5 de vida",5,1,"consumivel"),
@@ -180,8 +120,10 @@ VALUES
     (19,"Rifle","TMP, leve e pequena, tem um ótimo desempenho",300,10,"arma"),
     (20,"Sniper","Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20,"arma"),
     (21,"Lança Foguete","Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20,"arma"),
-    (22,"colete balistico","Colete corportal capaz de reduzir o dano recebido em 10%",valor,peso,"equipamento"),
-    (23,"capacete","Um capacete capaz de reduzir o dano recebido em 5%",valor,peso,"equipamento");
+    (22,"colete balistico","Colete corportal capaz de reduzir o dano recebido em 10%",200,15,"equipamento"),
+    (23,"capacete","Um capacete capaz de reduzir o dano recebido em 5%",150,5,"equipamento"),
+    (24,"colar","Colar de ouro com pedras",50,10,"dinheiro");
+
 
 INSERT INTO mapa (nome)
 VALUES
@@ -189,17 +131,84 @@ VALUES
     ("Castelo"),
     ("Ilha");
 
-INSERT INTO habilidade (nome,tempo_recarga_turno,tempo_recarga_tempo,dano)
+INSERT INTO missao(nome, multiplicador, completa, tipo, missao_TIPO, nome_mapa, descricao)
 VALUES
-    ("Chute rasteiro",2,30,50);
+    ("Boas vindas",1,0,"assassinato",1,"Vila","Mate seu primeiro Ganado"),
+    ("A Procura",1,0,"recuperacao",2,"Vila","Entre na igreja, e encontre Ashley"),
+    ("El gigante",2,0,"dupla",3,"Vila","Mate o El Gigante e recupere a chave da igreja"),
+    ("Las Plagas",1,0,"assassinato",1,"Vila","Mate duas plagas"),
+    ("Chefe da Vila",3,0,"assassinato",1,"Vila","Mate Bitores Mendez"),
+    ("Armaduras",2,0,"assassinato",1,"Castelo","Mate as 3 armaduras e entre na câmara de Salazar"),
+    ("Recuperacao",2,0,"recuperacao",2,"Castelo","Pegue a chave da câmara na sala de tortura"),
+    ("Verdugo",3,0,"dupla",3,"Castelo","Mate o Verdugo e recupere a chave da câmara"),
+    ("Salazar",4,0,"assassinato",1,"Castelo","Mate Salazar"),
+    ("Antigos Aliados",5,0,"assassinato",1,"Ilha","Derrote Krauser"),
+    ("Controle",5,0,"dupla",3,"Ilha","Mate o regenerator e recupere a o cartão de acesso à sala de controle"),
+    ("Soldados!",3,0,"assassinato",1,"Ilha","Mate todos os 6 soldados que estão na Fábrica de Armas"),
+    ("Fim do culto",6,0,"assassinato",1,"Ilha","Mate o chefe do Los Illuminados e acabe com o culto");
+
+INSERT INTO instanciaNPC (idinstancianpc, id_entidadenpc, fk_sala_numero, missao_nome, id_protagonista)
+VALUES
+    (1,1,33,NULL, NULL),
+    (2,1,34,NULL, NULL),
+    (3,1,35,NULL, NULL),
+    (4,1,36,NULL, NULL);
+
+INSERT INTO inventario(idinventario, pesomax, id_entidade, id_instancianpc)
+VALUES
+    (1,99999,NULL,1),
+    (2,99999,NULL,2),
+    (3,99999,NULL,3),
+    (4,99999,NULL,4),
+    (5,150,17,NULL);
+
+INSERT INTO arma(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni)
+VALUES
+    (16,"Faca de Combate",10,1,0.00,10.00,NULL),
+    (17,"Pistola",15,1,10.00,20.00,15),
+    (18,"Escopeta",40,1,30.00,5.00,8),
+    (19,"Rifle",35,1,8.00,10.00,30),
+    (20,"Sniper",60,1,3.00,25.00,5),
+    (21,"Lança Foguete",200,1,30.00,10.00,1);
+
+
+INSERT INTO equipamento (id_item, defesa, nivel)
+VALUES
+    (22,15,1),
+    (23,5,1);
+
+
+INSERT INTO consumivel (id_item, efeito)
+VALUES
+    (4,"Cura 25 de vida"),
+    (5,"Cura toda a vida"),
+    (6,"Cura 5 de vida"),
+    (7,"Cura 15 de vida"),
+    (8,"Cura 30 de vida");
+
+INSERT INTO dinheiro (id_item,valor)
+VALUES
+    (8,10),
+    (9,15),
+    (10,15),
+    (11,25),
+    (12,50),
+    (13,50),
+    (14,25),
+    (15,1);
+
+INSERT INTO vendedor(id_entidade)
+VALUES
+    (1);
 
 INSERT INTO reputacao (id_entidade, nivel_reputacao)
 VALUES
     (17,1);
 
-INSERT INTO vendedor(id_entidade)
+INSERT INTO habilidade (nome,tempo_recarga_turno,tempo_recarga_tempo,dano)
 VALUES
-    (1);
+    ("Chute rasteiro",2,30,50);
+
 
 INSERT INTO chefe(id_entidade)
 VALUES
@@ -214,36 +223,33 @@ INSERT INTO usa (id_entidade,nome_habilidade,nivel,ultimo_uso)
 VALUES
     (17,"chute rasteiro",1,null);
 
-INSERT INTO zumbi (fk_instanciaNPC_idinstancianpc)
-VALUES
 
-INSERT INTO instanciaNPC (idinstancianpc, fk_sala_numero, missao_nome,id_protagonista)
-VALUES
 
-INSERT INTO plaga (fk_instanciaNPC_idinstancianpc)
-VALUES
 
-INSERT INTO cachorro_zumbi (fk_instanciaNPC_idinstancianpc)
+
+
+INSERT INTO possui(fk_inventario_idinventario, fk_item_iditem, quantidade)
 VALUES
+    (31,5,3),
+    (31,4,5),
+    (32,5,3),
+    (32,4,5),
+    (33,5,3),
+    (33,4,5);
 
 INSERT INTO instanciaitem(idinstanciaitem, id_item, id_inventario, nome_missao)
 VALUES
 
-INSERT INTO equipamento (id_item, defesa, nivel)
+INSERT INTO zumbi (id_entidade)
 VALUES
-    (22,15,1),
-    (23,5,1);
+    ()
 
-INSERT INTO dinheiro (id_item,valor)
+INSERT INTO cachorro_zumbi (id_entidade)
 VALUES
-    (8,10),
-    (9,15),
-    (10,15),
-    (11,25),
-    (12,50),
-    (13,50),
-    (14,25),
-    (15,1);
+
+INSERT INTO plaga (id_entidade)
+VALUES
+
 
 
 

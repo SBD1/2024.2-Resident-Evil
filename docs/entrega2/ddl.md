@@ -15,11 +15,6 @@ CREATE TABLE sala (
     nome_mapa varchar(30)
 );
 
-CREATE TABLE mercado (
-    fk_sala_numero int,
-    fk_protagonista_fk_entidade_identidade int
-);
-
 CREATE TABLE entidade (
     identidade int auto_increment PRIMARY KEY,
     vida int,
@@ -49,21 +44,8 @@ CREATE TABLE item (
     tipo enum('arma','consumivel','equipamento','dinheiro')
 );
 
-CREATE TABLE inventario (
-    idinventario int auto_increment PRIMARY KEY,
-    pesomax int,
-    id_entidade int,
-    id_instancianpc int
-);
-
-CREATE TABLE arma (
-    nome varchar(50),
-    dano int,
-    nivel int,
-    chanceerro int,
-    chancecritico int,
-    maxmuni int,
-    id_item int PRIMARY KEY
+CREATE TABLE mapa (
+    nome varchar(30) PRIMARY KEY
 );
 
 CREATE TABLE missao (
@@ -76,12 +58,6 @@ CREATE TABLE missao (
     descricao varchar(150)
 );
 
-CREATE TABLE equipamento (
-    defesa int,
-    nivel int,
-    id_item int PRIMARY KEY
-);
-
 CREATE TABLE instancianpc (
     idinstancianpc int auto_increment PRIMARY KEY,
     id_entidadenpc int,
@@ -90,37 +66,41 @@ CREATE TABLE instancianpc (
     id_protagonista int
 );
 
-CREATE TABLE zumbi (
-    id_entidade int PRIMARY KEY
+CREATE TABLE inventario (
+    idinventario int auto_increment PRIMARY KEY,
+    pesomax int,
+    id_entidade int,
+    id_instancianpc int
 );
 
-CREATE TABLE cachorro_zumbi (
-    id_entidade int PRIMARY KEY
+
+CREATE TABLE arma (
+    nome varchar(50),
+    dano int,
+    nivel int,
+    chanceerro int,
+    chancecritico int,
+    maxmuni int,
+    id_item int PRIMARY KEY
 );
 
-CREATE TABLE plaga (
-    id_entidade int PRIMARY KEY
+
+CREATE TABLE equipamento (
+    defesa int,
+    nivel int,
+    id_item int PRIMARY KEY
 );
+
 
 CREATE TABLE consumivel (
     efeito varchar(50),
     id_item int PRIMARY KEY
 );
 
-CREATE TABLE instanciaitem (
-    idinstanciaitem int auto_increment PRIMARY KEY,
-    id_item int,
-    id_inventaro int,
-    nome_missao varchar(30)
-);
 
 CREATE TABLE dinheiro (
     valor int,
     id_item int PRIMARY KEY
-);
-
-CREATE TABLE mapa (
-    nome varchar(30) PRIMARY KEY
 );
 
 CREATE TABLE vendedor (
@@ -148,6 +128,29 @@ CREATE TABLE usa (
     nome_habilidade varchar(50),
     nivel int,
     ultimo_uso DATETIME
+);
+
+
+
+
+CREATE TABLE instanciaitem (
+    idinstanciaitem int auto_increment PRIMARY KEY,
+    id_item int,
+    id_inventaro int,
+    nome_missao varchar(30)
+);
+
+
+CREATE TABLE zumbi (
+    id_entidade int PRIMARY KEY
+);
+
+CREATE TABLE cachorro_zumbi (
+    id_entidade int PRIMARY KEY
+);
+
+CREATE TABLE plaga (
+    id_entidade int PRIMARY KEY
 );
 
 ALTER TABLE sala ADD CONSTRAINT FK_sala_2
@@ -288,3 +291,4 @@ ALTER TABLE usa ADD CONSTRAINT FK_usa_2
 |  1.1   | Inserção de informação |                     [José Oliveira](https://github.com/Jose1277)                      | 13/01/2025 |
 |  1.2   |       Alterações       |                  [Anne de Capdeville](https://github.com/nanecapde)                   | 13/01/2025 |
 |  1.3   |       Alterações       |                     [José Oliveira](https://github.com/jose1277)                      | 31/01/2025 |
+|  2.0   |       Alterações       |                       [Pablo Cunha](https://github.com/pabloo8)                       | 02/02/2025 |
