@@ -17,6 +17,7 @@ nav:
       - "DQL - Data Query Language": entrega2/dql.md
       - "Álgebra Relacional": entrega2/algebra-relacional.md
       - "Apresentação": entrega2/apresentação.md
+  - "Terceira Entrega":
 
 theme:
   name: material
