@@ -283,10 +283,11 @@ ALTER TABLE usa ADD CONSTRAINT FK_usa_2
 
 ```
 
-| Versão |       Descrição        |                                       Autor(es)                                       |    Data    |
-| :----: | :--------------------: | :-----------------------------------------------------------------------------------: | :--------: |
-|  1.0   |        Criação         | [Bruno Cruz](https://github.com/Brunocrzz) e [Breno Yuri](https://github.com/YuriBre) | 08/01/2025 |
-|  1.1   | Inserção de informação |                     [José Oliveira](https://github.com/Jose1277)                      | 13/01/2025 |
-|  1.2   |       Alterações       |                  [Anne de Capdeville](https://github.com/nanecapde)                   | 13/01/2025 |
-|  1.3   |       Alterações       |                     [José Oliveira](https://github.com/jose1277)                      | 31/01/2025 |
-|  2.0   |       Alterações       |                       [Pablo Cunha](https://github.com/pabloo8)                       | 02/02/2025 |
+| Versão |       Descrição        |                                                                 Autor(es)                                                                  |    Data    |
+| :----: | :--------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :--------: |
+|  1.0   |        Criação         |                           [Bruno Cruz](https://github.com/Brunocrzz) e [Breno Yuri](https://github.com/YuriBre)                            | 08/01/2025 |
+|  1.1   | Inserção de informação |                                                [José Oliveira](https://github.com/Jose1277)                                                | 13/01/2025 |
+|  1.2   |       Alterações       |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 13/01/2025 |
+|  1.3   |       Alterações       |                                                [José Oliveira](https://github.com/jose1277)                                                | 31/01/2025 |
+|  2.0   |       Alterações       |                                                 [Pablo Cunha](https://github.com/pabloo8)                                                  | 02/02/2025 |
+|  3.0   |       DDL final        | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
