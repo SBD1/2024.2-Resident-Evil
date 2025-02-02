@@ -1,4 +1,5 @@
 const frontMenuFunctions = require('./vanguarda/menu');
+const backMenuFunctions = require('./retaguarda/menu');
 const frontMapaFunctions = require('./vanguarda/mapa');
 
 async function main() {
@@ -8,6 +9,7 @@ async function main() {
     
     frontMenuFunctions.criarMenu();
     await new Promise(resolve => setTimeout(resolve, 2000));
+    await backMenuFunctions.escolherOpcao();
 
     frontMenuFunctions.limparTerminal();
 
