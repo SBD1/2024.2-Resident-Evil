@@ -101,18 +101,13 @@ FROM recuperacao r;
 
 ### 9. Exibir todas as salas que tem um chefe em um possível caminho:
 ```sql
-SELECT inv.idinventario AS id_mercado, 
-       COALESCE(a.nome, e.nome, c.nome, d.nome, 'Desconhecido') AS nome_item, 
-       i.tipo
-FROM vendedor v
-JOIN instancianpc i_npc ON v.id_entidade = i_npc.id_entidadenpc
-JOIN inventario inv ON i_npc.idinstancianpc = inv.id_instancianpc
-JOIN instanciaitem ii ON inv.idinventario = ii.id_inventario
-JOIN item i ON ii.id_item = i.iditem
-LEFT JOIN arma a ON i.iditem = a.id_item
-LEFT JOIN equipamento e ON i.iditem = e.id_item
-LEFT JOIN consumivel c ON i.iditem = c.id_item
-LEFT JOIN dinheiro d ON i.iditem = d.id_item;
+SELECT DISTINCT c.sala_atual, s.nome AS sala_atual_nome, c.prox_sala, s2.nome AS prox_sala_nome
+FROM caminho c
+JOIN sala s ON c.sala_atual = s.numero
+JOIN sala s2 ON c.prox_sala = s2.numero
+JOIN instancianpc i ON c.prox_sala = i.fk_sala_numero
+JOIN npc n ON i.id_entidadenpc = n.id_entidade
+WHERE n.tipo = 'chefe';
 ```
 
 ### 10. Exibir todos os mercados e os itens disponíveis neles:
