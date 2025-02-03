@@ -358,12 +358,12 @@ VALUES
 
 ```
 
-| Versão | Descrição |                                                                 Autor(es)                                                                  |    Data    |
-| :----: | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :--------: |
-|  1.0   |  Criação  |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 08/01/2025 |
-|  1.1   | Alteração |                                                 [Pablo Cunha](https://github.com/pabloo8)                                                  | 13/01/2025 |
-|  1.2   | Alteração |                           [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8)                           | 13/01/2025 |
-|  1.3   | Alteração |                       [Pablo Cunha](https://github.com/pabloo8) e [Anne de Capdeville](https://github.com/nanecapde)                       | 13/01/2025 |
-|  2.0   | Alteração |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 01/02/2025 |
-|  2.1   | Alteração |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 02/02/2025 |
-|  3.0   | DML final | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
+| Versão |   Descrição    |                                                                 Autor(es)                                                                  |    Data    |
+| :----: | :------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :--------: |
+|  1.0   |    Criação     |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 08/01/2025 |
+|  1.1   |   Alteração    |                                                 [Pablo Cunha](https://github.com/pabloo8)                                                  | 13/01/2025 |
+|  1.2   |   Alteração    |                           [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8)                           | 13/01/2025 |
+|  1.3   |   Alteração    |                       [Pablo Cunha](https://github.com/pabloo8) e [Anne de Capdeville](https://github.com/nanecapde)                       | 13/01/2025 |
+|  2.0   |   Alteração    |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 01/02/2025 |
+|  2.1   |   Alteração    |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 02/02/2025 |
+|  3.0   | DML alterações | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
