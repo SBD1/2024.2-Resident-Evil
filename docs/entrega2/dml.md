@@ -27,7 +27,6 @@ VALUES
     (8, 'Casa do Chefe Bitores Mendez', 'Vila'),
     (9, 'Cabana Abandonada', 'Vila'),
     (10, 'Caminho para o Castelo', 'Vila'),
-
     (11, 'Entrada do Castelo', 'Castelo'),
     (12, 'Salão Principal', 'Castelo'),
     (13, 'Sala de Armaduras', 'Castelo'),
@@ -38,7 +37,6 @@ VALUES
     (18, 'Caminho para o Elevador', 'Castelo'),
     (19, 'Sala do Elevador', 'Castelo'),
     (20, 'Área do Chefe Salazar', 'Castelo'),
-
     (21, 'Praia da Ilha', 'Ilha'),
     (22, 'Área de Contêineres', 'Ilha'),
     (23, 'Fábrica de Armas', 'Ilha'),
@@ -51,7 +49,6 @@ VALUES
     (30, 'Elevador', 'Ilha'),
     (31, 'Área do Chefe Saddler', 'Ilha'),
     (32, 'Porto', 'Ilha'),
-
     (33, 'Mercado', 'Vila'),
     (34, 'Mercado', 'Castelo'),
     (35, 'Mercado', 'Ilha'),
@@ -60,7 +57,7 @@ VALUES
 INSERT INTO entidade(identidade, tipo)
 VALUES
     (1,'npc'),
-    (2, 'npc'),
+    (2,'npc'),
     (3,'npc'),
     (4,'npc'),
     (5,'npc'),
@@ -79,30 +76,29 @@ VALUES
     (18,'npc'),
     (19,'npc');
 
-INSERT INTO protagonista(id_entidade, nickname, killcount, dinheirorecebido,fk_sala_numero, vida, dano)
+INSERT INTO protagonista(id_entidade, nickname, killcount, dinheirorecebido,fk_sala_numero, vida, dano,arma_equipada,equipamento_equipado)
 VALUES
-    (17,"brunoc",0,0,1,100,0);
+    (17,"brunoc",0,0,1,100,0,NULL,NULL);
 
 INSERT INTO npc(id_entidade, tipo)
 VALUES
-    (1,  'vendedor'),
-    (2,  'zumbi'),
-    (3,  'zumbi'),
-    (4,  'zumbi'),
-    (5,  'zumbi'),
-    (6,  'plaga'),
-    (7,  'cachorro_zumbi'),
-    (8,  'chefe'),
-    (9, 'chefe'),
-    (10,  'chefe'),
-    (11,  'chefe'),
-    (12,  'chefe'),
-    (13,  'zumbi'),
-    (14,  'plaga'),
-    (15,  'chefe'),
-    (16,  'Zumbi'),
-    (19,  'chefe');
-
+    (1,'vendedor'),
+    (2,'zumbi'),
+    (3,'zumbi'),
+    (4,'zumbi'),
+    (5,'zumbi'),
+    (6,'plaga'),
+    (7,'cachorro_zumbi'),
+    (8,'chefe'),
+    (9,'chefe'),
+    (10,'chefe'),
+    (11,'chefe'),
+    (12,'chefe'),
+    (13,'zumbi'),
+    (14,'plaga'),
+    (15,'chefe'),
+    (16,'Zumbi'),
+    (19,'chefe');
 
 INSERT INTO item (iditem, tipo)
 VALUES
@@ -152,7 +148,6 @@ VALUES
 
 INSERT INTO assassinato(nome, multiplicador, completa, missao_TIPO, nome_mapa, descricao)
 VALUES
-
     ("Boas vindas",1,0,"assassinato","Vila","Mate seu primeiro Ganado"),
     ("El gigante",2,0,"assassinato","Vila","Mate o El Gigante e recupere a chave da igreja"),
     ("Las Plagas",1,0,"assassinato","Vila","Mate duas plagas"),
@@ -174,19 +169,19 @@ VALUES
     ("Verdugo",3,0,"recuperacao","Castelo","Mate o Verdugo e recupere a chave da câmara"),
     ("Controle",5,0,"recuperacao","Ilha","Mate o regenerator e recupere a o cartão de acesso à sala de controle");
 
-INSERT INTO instanciaNPC (idinstancianpc, id_entidadenpc, fk_sala_numero, missao_nome, id_protagonista)
+INSERT INTO instanciaNPC (idinstancianpc, id_entidadenpc, fk_sala_numero, missao_nome, id_protagonista,vida_atual)
 VALUES
-    (1,1,33,NULL, NULL),
-    (2,1,34,NULL, NULL),
-    (3,1,35,NULL, NULL),
-    (4,1,36,NULL, NULL),
-    (11,19,8,'Chefe da Vila', NULL),
-    (10,15,29,'Antigos Aliados', NULL),
-    (9,12,24,'Controle', NULL),
-    (8,11,31,'Fim do culto', NULL),
-    (7,10,20,'Salazar', NULL),
-    (6,9,15,'Verdugo', NULL),
-    (5,8,5,'El gigante', NULL);
+    (1,1,33,NULL,NULL,10),
+    (2,1,34,NULL,NULL,10),
+    (3,1,35,NULL,NULL,10),
+    (4,1,36,NULL,NULL,10),
+    (5,8,5,'El gigante',NULL,300),
+    (6,9,15,'Verdugo',NULL,350),
+    (7,10,20,'Salazar',NULL,400),
+    (8,11,31,'Fim do culto',NULL,500),
+    (9,12,24,'Controle',NULL,300),
+    (10,15,29,'Antigos Aliados',NULL,400),
+    (11,19,8,'Chefe da Vila',NULL,350);
 
 INSERT INTO inventario(idinventario, pesomax, id_protagonista, id_instancianpc)
 VALUES
@@ -208,12 +203,10 @@ VALUES
     (20,"Sniper",60,1,3.00,25.00,5, "Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20),
     (21,"Lança Foguete",200,1,30.00,10.00,1,"Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20);
 
-
 INSERT INTO equipamento (id_item, defesa, nivel, nome, descricao, valor, peso)
 VALUES
     (22,15,1,"colete balistico","Colete corportal capaz de reduzir o dano recebido em 10%",200,15),
     (23,5,1, "capacete","Um capacete capaz de reduzir o dano recebido em 5%",150,5);
-
 
 INSERT INTO consumivel (id_item, efeito, nome, descricao, valor, peso)
 VALUES
@@ -260,13 +253,14 @@ INSERT INTO usa (id_entidade,nome_habilidade,nivel,ultimo_uso)
 VALUES
     (17,"chute rasteiro",1,null);
 
-
 INSERT INTO instanciaitem(idinstanciaitem, id_item, id_inventario, nome_missao)
 VALUES
     (1, 16, 5, NULL),
     (2, 1, 6, 'El gigante'),
     (3, 2, 7, 'Verdugo'),
-    (4, 3, 8, 'Controle');
+    (4, 3, 8, 'Controle'),
+    (5, 12, NULL, NULL),
+    (6, 20, 3, NULL);
 
 INSERT INTO zumbi (id_entidade, nome, vida, dano)
 VALUES
@@ -356,6 +350,9 @@ VALUES
     (31,30),
     (31,32);
 
+INSERT INTO item_sala (id, fk_sala, id_item, quantidade)
+VALUES
+    (1,3,5,1);
 ```
 
 | Versão |   Descrição    |                                                                 Autor(es)                                                                  |    Data    |
@@ -366,4 +363,5 @@ VALUES
 |  1.3   |   Alteração    |                       [Pablo Cunha](https://github.com/pabloo8) e [Anne de Capdeville](https://github.com/nanecapde)                       | 13/01/2025 |
 |  2.0   |   Alteração    |                                                 [Bruno Cruz](https://github.com/Brunocrzz)                                                 | 01/02/2025 |
 |  2.1   |   Alteração    |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 02/02/2025 |
-|  3.0   | DML alterações | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
+|  2.2   | DML alterações | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
+|  3.0   |   DML Final    |                      [Bruno Cruz](https://github.com/Brunocrzz) e [Anne de Capdeville](https://github.com/nanecapde)                       | 03/02/2025 |

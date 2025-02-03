@@ -31,7 +31,9 @@ CREATE TABLE protagonista (
     dinheirorecebido int,
     fk_sala_numero int,
     vida int,
-    dano int
+    dano int,
+    arma_equipada INT DEFAULT NULL,
+    equipamento_equipado INT DEFAULT NULL
 );
 
 CREATE TABLE npc (
@@ -75,7 +77,8 @@ CREATE TABLE instancianpc (
     id_entidadenpc int,
     fk_sala_numero int,
     missao_nome varchar(30),
-    id_protagonista int
+    id_protagonista int,
+    vida_atual int
 );
 
 CREATE TABLE inventario (
@@ -197,6 +200,13 @@ CREATE TABLE caminho (
     PRIMARY KEY (sala_atual, prox_sala)
 );
 
+CREATE TABLE item_sala (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fk_sala INT,
+    id_item INT,
+    quantidade INT DEFAULT 1
+);
+
 ALTER TABLE sala ADD CONSTRAINT FK_sala_2
     FOREIGN KEY (nome_mapa)
     REFERENCES mapa (nome)
@@ -312,6 +322,16 @@ ALTER TABLE instanciaitem ADD CONSTRAINT FK_instanciaitem_3
     REFERENCES missao (nome)
     ON DELETE CASCADE;
 
+ALTER TABLE protagonista ADD CONSTRAINT FK_protagonista_4
+    FOREIGN KEY (equipamento_equipado)
+    REFERENCES instanciaitem (id_item)
+    ON DELETE CASCADE;
+
+ALTER TABLE protagonista ADD CONSTRAINT FK_protagonista_5
+    FOREIGN KEY (arma_equipada)
+    REFERENCES instanciaitem (id_item)
+    ON DELETE CASCADE;    
+
 ALTER TABLE dinheiro ADD CONSTRAINT FK_dinheiro_2
     FOREIGN KEY (id_item)
     REFERENCES item (iditem)
@@ -347,9 +367,19 @@ ALTER TABLE caminho ADD CONSTRAINT FK_caminho_2
     REFERENCES sala (numero)
     ON DELETE CASCADE;
 
-ALTER TABLE caminho ADD CONSTRAINT FK_camihno_3
+ALTER TABLE caminho ADD CONSTRAINT FK_caminho_3
     FOREIGN KEY (prox_sala)
     REFERENCES sala (numero)
+    ON DELETE CASCADE;
+
+ALTER TABLE item_sala ADD CONSTRAINT FK_item_sala_2
+    FOREIGN KEY (fk_sala) 
+    REFERENCES sala(numero) 
+    ON DELETE CASCADE;
+
+ALTER TABLE item_sala ADD CONSTRAINT FK_item_sala_3
+    FOREIGN KEY (id_item) 
+    REFERENCES item(iditem) 
     ON DELETE CASCADE;
 
 ```
@@ -361,4 +391,5 @@ ALTER TABLE caminho ADD CONSTRAINT FK_camihno_3
 |  1.2   |       Alterações       |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 13/01/2025 |
 |  1.3   |       Alterações       |                                                [José Oliveira](https://github.com/jose1277)                                                | 31/01/2025 |
 |  2.0   |       Alterações       |                                                 [Pablo Cunha](https://github.com/pabloo8)                                                  | 02/02/2025 |
-|  3.0   |      DDL alterado      | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
+|  2.1   |      DDL alterado      | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
+|  3.0   |       DDL Final        |                      [Bruno Cruz](https://github.com/Brunocrzz) e [Anne de Capdeville](https://github.com/nanecapde)                       | 03/02/2025 |
