@@ -238,7 +238,7 @@ VALUES
     (8,150,NULL,9),
     (9,150,NULL,11),
     (10,150,NULL,10),
-    (11,150,NULL,8),
+    (11,150,NULL,8);
 
 INSERT INTO arma(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni, descricao, valor, peso)
 VALUES
