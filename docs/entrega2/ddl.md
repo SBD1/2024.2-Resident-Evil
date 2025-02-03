@@ -16,7 +16,8 @@ CREATE TABLE mapa (
 CREATE TABLE sala (
     numero int PRIMARY KEY,
     nome varchar(30),
-    nome_mapa varchar(30)
+    nome_mapa varchar(30),
+    descriçao varchar(2000)
 );
 
 CREATE TABLE entidade (

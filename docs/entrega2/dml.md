@@ -15,44 +15,52 @@ VALUES
     ("Castelo"),
     ("Ilha");
 
-INSERT INTO sala(numero, nome, nome_mapa)
+INSERT INTO sala(numero, nome, nome_mapa, descriçao)
 VALUES
-    (1, 'Entrada da Vila', 'Vila'),
-    (2, 'Praça Principal da Vila', 'Vila'),
-    (3, 'Cabana de Luis', 'Vila'),
-    (4, 'Igreja', 'Vila'),
-    (5, 'Torre de Vigia', 'Vila'),
-    (6, 'Caminho para o Lago', 'Vila'),
-    (7, 'Lago', 'Vila'),
-    (8, 'Casa do Chefe Bitores Mendez', 'Vila'),
-    (9, 'Cabana Abandonada', 'Vila'),
-    (10, 'Caminho para o Castelo', 'Vila'),
-    (11, 'Entrada do Castelo', 'Castelo'),
-    (12, 'Salão Principal', 'Castelo'),
-    (13, 'Sala de Armaduras', 'Castelo'),
-    (14, 'Jardim do Castelo', 'Castelo'),
-    (15, 'Sala de Tortura', 'Castelo'),
-    (16, 'Salão de Banquete', 'Castelo'),
-    (17, 'Câmara de Salazar', 'Castelo'),
-    (18, 'Caminho para o Elevador', 'Castelo'),
-    (19, 'Sala do Elevador', 'Castelo'),
-    (20, 'Área do Chefe Salazar', 'Castelo'),
-    (21, 'Praia da Ilha', 'Ilha'),
-    (22, 'Área de Contêineres', 'Ilha'),
-    (23, 'Fábrica de Armas', 'Ilha'),
-    (24, 'Laboratório de Experimentos', 'Ilha'),
-    (25, 'Câmara de Tortura', 'Ilha'),
-    (26, 'Armazém', 'Ilha'),
-    (27, 'Sala de Controle', 'Ilha'),
-    (28, 'Caverna Subterrânea', 'Ilha'),
-    (29, 'Área do Helicóptero', 'Ilha'),
-    (30, 'Elevador', 'Ilha'),
-    (31, 'Área do Chefe Saddler', 'Ilha'),
-    (32, 'Porto', 'Ilha'),
-    (33, 'Mercado', 'Vila'),
-    (34, 'Mercado', 'Castelo'),
-    (35, 'Mercado', 'Ilha'),
-    (36, 'Mercado', 'Ilha');
+    (1, 'Entrada da Vila', 'Vila', NULL),
+    (2, 'Praça Principal da Vila', 'Vila', NULL),
+    (3, 'Cabana de Luis', 'Vila', A cabana é pequena, com paredes de madeira envelhecida e um chão de tábuas rangentes.  No fundo da cabana, há uma porta entreaberta que leva a um pequeno porão. De lá, você ouve o som de algo se movendo. Ao entrar no porão, você se depara com um homem sentado em uma cadeira, fumando um cigarro. 
+
+- "Luis Serra, certo? Parece que você tem informações que eu preciso."
+- "Whoa, whoa! Calma, amigo. Eu sou um aliado, não um inimigo.
+-  "Depende do que você tem a dizer. O que você sabe sobre essa aldeia? E sobre a garota que foi sequestrada?"
+- "Ah, sim, a filha do presidente... Ashley, certo? Parece que ela se meteu em uma enrascada feia. Sabe, essa aldeia não é o que parece. Os moradores... eles não estão mais no controle de si mesmos."
+- "O que você quer dizer com isso?"
+-  "Há algo dentro deles. Um parasita. Chama-se Las Plagas. É antigo, muito antigo. A seita que controla essa aldeia reviveu essa coisa e está usando-a para transformar as pessoas em... bem, você já viu. Monstros obedientes. Eu tenho os planos da seita. Sei onde eles estão mantendo a garota e como derrotar essas coisas. Você precisa de mim, amigo."
+),
+    (4, 'Igreja', 'Vila', NULL),
+    (5, 'Torre de Vigia', 'Vila', NULL),
+    (6, 'Caminho para o Lago', 'Vila', NULL),
+    (7, 'Lago', 'Vila', NULL),
+    (8, 'Casa do Chefe Bitores Mendez', 'Vila', NULL),
+    (9, 'Cabana Abandonada', 'Vila', NULL),
+    (10, 'Caminho para o Castelo', 'Vila', NULL),
+    (11, 'Entrada do Castelo', 'Castelo', NULL),
+    (12, 'Salão Principal', 'Castelo', NULL),
+    (13, 'Sala de Armaduras', 'Castelo', NULL),
+    (14, 'Jardim do Castelo', 'Castelo', NULL),
+    (15, 'Sala de Tortura', 'Castelo', NULL),
+    (16, 'Salão de Banquete', 'Castelo', NULL),
+    (17, 'Câmara de Salazar', 'Castelo', NULL),
+    (18, 'Caminho para o Elevador', 'Castelo', NULL),
+    (19, 'Sala do Elevador', 'Castelo', NULL),
+    (20, 'Área do Chefe Salazar', 'Castelo', NULL),
+    (21, 'Praia da Ilha', 'Ilha', NULL),
+    (22, 'Área de Contêineres', 'Ilha', NULL),
+    (23, 'Fábrica de Armas', 'Ilha', NULL),
+    (24, 'Laboratório de Experimentos', 'Ilha', NULL),
+    (25, 'Câmara de Tortura', 'Ilha', NULL),
+    (26, 'Armazém', 'Ilha', NULL),
+    (27, 'Sala de Controle', 'Ilha', NULL),
+    (28, 'Caverna Subterrânea', 'Ilha', NULL),
+    (29, 'Área do Helicóptero', 'Ilha', NULL),
+    (30, 'Elevador', 'Ilha', NULL),
+    (31, 'Área do Chefe Saddler', 'Ilha', NULL),
+    (32, 'Porto', 'Ilha', NULL),
+    (33, 'Mercado', 'Vila', NULL),
+    (34, 'Mercado', 'Castelo', NULL),
+    (35, 'Mercado', 'Ilha', NULL),
+    (36, 'Mercado', 'Ilha', NULL);
 
 INSERT INTO entidade(identidade, tipo)
 VALUES
