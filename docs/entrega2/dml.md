@@ -19,17 +19,16 @@ INSERT INTO sala(numero, nome, nome_mapa, descriçao)
 VALUES
     (1, 'Entrada da Vila', 'Vila', NULL),
     (2, 'Praça Principal da Vila', 'Vila', NULL),
-    (3, 'Cabana de Luis', 'Vila', A cabana é pequena, com paredes de madeira envelhecida e um chão de tábuas rangentes.  No fundo da cabana, há uma porta entreaberta que leva a um pequeno porão. De lá, você ouve o som de algo se movendo. Ao entrar no porão, você se depara com um homem sentado em uma cadeira, fumando um cigarro. 
+    (3, 'Cabana de Luis', 'Vila', 'A cabana é pequena, com paredes de madeira envelhecida e um chão de tábuas rangentes.  No fundo da cabana, há uma porta entreaberta que leva a um pequeno porão. De lá, você ouve o som de algo se movendo. Ao entrar no porão, você se depara com um homem sentado em uma cadeira, fumando um cigarro. 
 
-- "Luis Serra, certo? Parece que você tem informações que eu preciso."
-- "Whoa, whoa! Calma, amigo. Eu sou um aliado, não um inimigo.
--  "Depende do que você tem a dizer. O que você sabe sobre essa aldeia? E sobre a garota que foi sequestrada?"
-- "Ah, sim, a filha do presidente... Ashley, certo? Parece que ela se meteu em uma enrascada feia. Sabe, essa aldeia não é o que parece. Os moradores... eles não estão mais no controle de si mesmos."
-- "O que você quer dizer com isso?"
--  "Há algo dentro deles. Um parasita. Chama-se Las Plagas. É antigo, muito antigo. A seita que controla essa aldeia reviveu essa coisa e está usando-a para transformar as pessoas em... bem, você já viu. Monstros obedientes. Eu tenho os planos da seita. Sei onde eles estão mantendo a garota e como derrotar essas coisas. Você precisa de mim, amigo."
-),
+    - "Luis Serra, certo? Parece que você tem informações que eu preciso."
+    - "Whoa, whoa! Calma, amigo. Eu sou um aliado, não um inimigo.
+    -  "Depende do que você tem a dizer. O que você sabe sobre essa aldeia? E sobre a garota que foi sequestrada?"
+    - "Ah, sim, a filha do presidente... Ashley, certo? Parece que ela se meteu em uma enrascada feia. Sabe, essa aldeia não é o que parece. Os moradores... eles não estão mais no controle de si mesmos."
+    - "O que você quer dizer com isso?"
+    -  "Há algo dentro deles. Um parasita. Chama-se Las Plagas. É antigo, muito antigo. A seita que controla essa aldeia reviveu essa coisa e está usando-a para transformar as pessoas em... bem, você já viu. Monstros obedientes. Eu tenho os planos da seita. Sei onde eles estão mantendo a garota e como derrotar essas coisas. Você precisa de mim, amigo.".'),
     (4, 'Igreja', 'Vila', NULL),
-    (5, 'Torre de Vigia', 'Vila', NULL),
+    (5, 'Torre de Vigia', 'Vila', 'A torre de vigia é uma estrutura alta e precária, feita de madeira envelhecida e amarrada com cordas gastas. Ela se ergue acima das árvores, oferecendo uma vista ampla da vila e dos arredores. Da base da torre, surge uma porta de madeira, porém sem nenhum caminho ou trajeto visível que leve a ela. Ao olhar ao redor,  você percebe que está cercado por paredes de pedras antigas e musgosas, manchas vermelhas de sangue surgem pelo chão de terra batida. Então você percebe que está no centro de uma arena. De repente, um rugido ecoa e o chão treme levemente. El Gigante, uma criatura colossal e deformada, emerge das sombras. Ele é uma massa de músculos retorcidos e pele pálida, com olhos que brilham com uma fúria primitiva.' ),
     (6, 'Caminho para o Lago', 'Vila', NULL),
     (7, 'Lago', 'Vila', NULL),
     (8, 'Casa do Chefe Bitores Mendez', 'Vila', NULL),
@@ -57,10 +56,14 @@ VALUES
     (30, 'Elevador', 'Ilha', NULL),
     (31, 'Área do Chefe Saddler', 'Ilha', NULL),
     (32, 'Porto', 'Ilha', NULL),
-    (33, 'Mercado', 'Vila', NULL),
-    (34, 'Mercado', 'Castelo', NULL),
-    (35, 'Mercado', 'Ilha', NULL),
-    (36, 'Mercado', 'Ilha', NULL);
+    (33, 'Mercado', 'Vila', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
+    - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".'),
+    (34, 'Mercado', 'Castelo', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
+    - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".'),
+    (35, 'Mercado', 'Ilha', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
+    - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".'),
+    (36, 'Mercado', 'Ilha', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
+    - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".');
 
 INSERT INTO entidade(identidade, tipo)
 VALUES
