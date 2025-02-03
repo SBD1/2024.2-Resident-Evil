@@ -40,31 +40,10 @@ CREATE TABLE npc (
 );
 
 
-INSERT INTO npc(id_entidade, nome, tipo)
-VALUES
-    (1, 'Mercador', 'vendedor'),
-    (2, 'Ganado', 'zumbi'),
-    (3, 'Ganado do Castelo', 'zumbi'),
-    (4, 'Ganado com Machado', 'zumbi'),
-    (5, 'Ganado com Foice', 'zumbi'),
-    (6, 'Plaga', 'plaga'),
-    (7, 'Cachorro Zumbi', 'cachorro_zumbi'),
-    (8, 'El Gigante', 'chefe'),
-    (9, 'Verdugo', 'chefe'),
-    (10, 'Salazar', 'chefe'),
-    (11, 'Saddler', 'chefe'),
-    (12, 'Regenerator', 'chefe'),
-    (13, "El salvador", "zumbi"),
-    (14, "Armadura", "plaga"),
-    (15, "Krauser", "chefe"),
-    (16, "Soldado", "Zumbi"),
-    (19, 'Bitores Mendez', 'chefe');
-
 CREATE TABLE item (
     iditem int auto_increment PRIMARY KEY,
     tipo enum('arma','consumivel','equipamento','dinheiro')
 );
-
 
 
 CREATE TABLE missao (
@@ -382,4 +361,4 @@ ALTER TABLE caminho ADD CONSTRAINT FK_camihno_3
 |  1.2   |       Alterações       |                                             [Anne de Capdeville](https://github.com/nanecapde)                                             | 13/01/2025 |
 |  1.3   |       Alterações       |                                                [José Oliveira](https://github.com/jose1277)                                                | 31/01/2025 |
 |  2.0   |       Alterações       |                                                 [Pablo Cunha](https://github.com/pabloo8)                                                  | 02/02/2025 |
-|  3.0   |       DDL final        | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
+|  3.0   |      DDL alterado      | [Anne de Capdeville](https://github.com/nanecapde), [Bruno Cruz](https://github.com/Brunocrzz) e [Pablo Cunha](https://github.com/pabloo8) | 02/02/2025 |
