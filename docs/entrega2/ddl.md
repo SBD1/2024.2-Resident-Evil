@@ -65,33 +65,6 @@ CREATE TABLE item (
     tipo enum('arma','consumivel','equipamento','dinheiro')
 );
 
-INSERT INTO item (iditem, nome, descricao, valor, peso, tipo)
-VALUES
-    (1,"Chave Igreja","Chave para a abrir a Igreja na Vila",0,0,"consumivel"),
-    (2,"Chave da Câmara","Chave para a câmara de Salazar no Castelo",0,0,"consumivel"),
-    (3,"Cartão de acesso","Cartão de acesso para a Sala de Controle na Ilha",0,0,"consumivel"),
-    (4,"Erva Verde","Erva medicinal que pode curar 25 de vida.",10,5,"consumivel"),
-    (5,"Spray Medicinal","Spray, cura toda a vida",20,5,"consumivel"),
-    (6,"Ovo Branco","Ovo Branco de galinha, cura 5 de vida",5,1,"consumivel"),
-    (7,"Ovo Marrom","Ovo marrom de galinha, cura 15 de vida",10,1,"consumivel"),
-    (8,"Ovo Dourado","Ovo Dourado, cura 30 de vida",30,1,"consumivel"),
-    (9,"Esmeralda","Pedra de Esmeralda",15,5,"dinheiro"),
-    (10,"Rubi","Pedra de Rubi",15,5,"dinheiro"),
-    (11,"Diamante","Pedra de Diamante",25,10,"dinheiro"),
-    (12,"Máscara Elegante","Uma máscara com jóias",50,15,"dinheiro"),
-    (13,"Baú de moedas","Baú com muitas moedas",50,0,"dinheiro"),
-    (14,"Saco de moedas","Saco com várias moedas",25,0,"dinheiro"),
-    (15,"Moeda","Moeda usada para compra de armas e equipamentos",1,0,"dinheiro"),
-    (16,"Faca de Combate","Faca de combate. Esta faca foi dada a você como um presente da sua falecida mãe, e voce nunca mais saiu sem ela.",0,0,"arma"),
-    (17,"Pistola","Pistola SG-09, feita especialmente para você para realizar sua missão",100,5,"arma"),
-    (18,"Escopeta","W-870, calibre 12 com ação de bombeamento",150,15,"arma"),
-    (19,"Rifle","TMP, leve e pequena, tem um ótimo desempenho",300,10,"arma"),
-    (20,"Sniper","Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20,"arma"),
-    (21,"Lança Foguete","Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20,"arma"),
-    (22,"colete balistico","Colete corportal capaz de reduzir o dano recebido em 10%",200,15,"equipamento"),
-    (23,"capacete","Um capacete capaz de reduzir o dano recebido em 5%",150,5,"equipamento"),
-    (24,"colar","Colar de ouro com pedras",50,10,"dinheiro");
-
 
 
 CREATE TABLE missao (
@@ -100,28 +73,11 @@ CREATE TABLE missao (
     PRIMARY KEY (nome, tipo)
 );
 
-
-INSERT INTO missao(nome, multiplicador, completa, tipo, missao_TIPO, nome_mapa, descricao)
-VALUES
-    ("Boas vindas",1,0,"assassinato",1,"Vila","Mate seu primeiro Ganado"),
-    ("A Procura",1,0,"recuperacao",2,"Vila","Entre na igreja, e encontre Ashley"),
-    ("El gigante",2,0,"dupla",3,"Vila","Mate o El Gigante e recupere a chave da igreja"),
-    ("Las Plagas",1,0,"assassinato",1,"Vila","Mate duas plagas"),
-    ("Chefe da Vila",3,0,"assassinato",1,"Vila","Mate Bitores Mendez"),
-    ("Armaduras",2,0,"assassinato",1,"Castelo","Mate as 3 armaduras e entre na câmara de Salazar"),
-    ("Recuperacao",2,0,"recuperacao",2,"Castelo","Pegue a chave da câmara na sala de tortura"),
-    ("Verdugo",3,0,"dupla",3,"Castelo","Mate o Verdugo e recupere a chave da câmara"),
-    ("Salazar",4,0,"assassinato",1,"Castelo","Mate Salazar"),
-    ("Antigos Aliados",5,0,"assassinato",1,"Ilha","Derrote Krauser"),
-    ("Controle",5,0,"dupla",3,"Ilha","Mate o regenerator e recupere a o cartão de acesso à sala de controle"),
-    ("Soldados!",3,0,"assassinato",1,"Ilha","Mate todos os 6 soldados que estão na Fábrica de Armas"),
-    ("Fim do culto",6,0,"assassinato",1,"Ilha","Mate o chefe do Los Illuminados e acabe com o culto");
-
 CREATE TABLE assassinato(
     nome varchar(30) PRIMARY KEY,
     completa bool,
     multiplicador int,
-    missao_TIPO INT,
+    missao_tipo enum('assassinato'),
     nome_mapa varchar(30),
     descricao varchar(150)
 );
@@ -130,7 +86,7 @@ CREATE TABLE recuperacao(
     nome varchar(30) PRIMARY KEY,
     completa bool,
     multiplicador int,
-    missao_TIPO INT,
+    missao_tipo enum('recuperacao'),
     nome_mapa varchar(30),
     descricao varchar(150)
 );
@@ -163,7 +119,6 @@ CREATE TABLE arma (
     valor int,
     peso int
 );
-
 
 CREATE TABLE equipamento (
     defesa int,
