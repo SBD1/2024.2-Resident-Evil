@@ -9,6 +9,11 @@ Linguagem de manipulação de dados: São comandos que interagem com os dados de
 Nesse projeto, os comandos DML usados foram:
 
 ```
+INSERT INTO mapa (nome)
+VALUES
+    ("Vila"),
+    ("Castelo"),
+    ("Ilha");
 
 INSERT INTO sala(numero, nome, nome_mapa)
 VALUES
@@ -52,95 +57,90 @@ VALUES
     (35, 'Mercado', 'Ilha'),
     (36, 'Mercado', 'Ilha');
 
-INSERT INTO entidade(identidade, vida, dano)
+INSERT INTO entidade(identidade, tipo)
 VALUES
-    (1,10,0),
-    (2,100,10),
-    (3,100,15),
-    (4,100,12),
-    (5,100,12),
-    (6,150,15),
-    (7,150,15),
-    (8,300,20),
-    (9,350,20),
-    (10,400,25),
-    (11,500,25),
-    (12,300,20),
-    (13,200,15),
-    (14,200,15),
-    (15,400,15),
-    (16,150,15),
-    (17,100,0),
-    (18,100,0),
-    (19,350,25);
+    (1,'npc'),
+    (2, 'npc'),
+    (3,'npc'),
+    (4,'npc'),
+    (5,'npc'),
+    (6,'npc'),
+    (7,'npc'),
+    (8,'npc'),
+    (9,'npc'),
+    (10,'npc'),
+    (11,'npc'),
+    (12,'npc'),
+    (13,'npc'),
+    (14,'npc'),
+    (15,'npc'),
+    (16,'npc'),
+    (17,'protagonista'),
+    (18,'npc'),
+    (19,'npc');
 
-
-INSERT INTO protagonista(id_entidade, nickname, killcount, dinheirorecebido,fk_sala_numero)
+INSERT INTO protagonista(id_entidade, nickname, killcount, dinheirorecebido,fk_sala_numero, vida, dano)
 VALUES
-    (17,"brunoc",0,0,1);
+    (17,"brunoc",0,0,1,100,0);
 
-INSERT INTO npc(id_entidade, nome, tipo)
+INSERT INTO npc(id_entidade, tipo)
 VALUES
-    (1, 'Mercador', 'vendedor'),
-    (2, 'Ganado', 'zumbi'),
-    (3, 'Ganado do Castelo', 'zumbi'),
-    (4, 'Ganado com Machado', 'zumbi'),
-    (5, 'Ganado com Foice', 'zumbi'),
-    (6, 'Plaga', 'plaga'),
-    (7, 'Cachorro Zumbi', 'cachorro_zumbi'),
-    (8, 'El Gigante', 'chefe'),
-    (9, 'Verdugo', 'chefe'),
-    (10, 'Salazar', 'chefe'),
-    (11, 'Saddler', 'chefe'),
-    (12, 'Regenerator', 'chefe'),
-    (13, "El salvador", "zumbi"),
-    (14, "Armadura", "plaga"),
-    (15, "Krauser", "chefe"),
-    (16, "Soldado", "Zumbi"),
-    (19, 'Bitores Mendez', 'chefe');
+    (1,  'vendedor'),
+    (2,  'zumbi'),
+    (3,  'zumbi'),
+    (4,  'zumbi'),
+    (5,  'zumbi'),
+    (6,  'plaga'),
+    (7,  'cachorro_zumbi'),
+    (8,  'chefe'),
+    (9, 'chefe'),
+    (10,  'chefe'),
+    (11,  'chefe'),
+    (12,  'chefe'),
+    (13,  'zumbi'),
+    (14,  'plaga'),
+    (15,  'chefe'),
+    (16,  'Zumbi'),
+    (19,  'chefe');
 
-INSERT INTO item (iditem, nome, descricao, valor, peso, tipo)
+
+INSERT INTO item (iditem, tipo)
 VALUES
-    (1,"Chave Igreja","Chave para a abrir a Igreja na Vila",0,0,"consumivel"),
-    (2,"Chave da Câmara","Chave para a câmara de Salazar no Castelo",0,0,"consumivel"),
-    (3,"Cartão de acesso","Cartão de acesso para a Sala de Controle na Ilha",0,0,"consumivel"),
-    (4,"Erva Verde","Erva medicinal que pode curar 25 de vida.",10,5,"consumivel"),
-    (5,"Spray Medicinal","Spray, cura toda a vida",20,5,"consumivel"),
-    (6,"Ovo Branco","Ovo Branco de galinha, cura 5 de vida",5,1,"consumivel"),
-    (7,"Ovo Marrom","Ovo marrom de galinha, cura 15 de vida",10,1,"consumivel"),
-    (8,"Ovo Dourado","Ovo Dourado, cura 30 de vida",30,1,"consumivel"),
-    (9,"Esmeralda","Pedra de Esmeralda",15,5,"dinheiro"),
-    (10,"Rubi","Pedra de Rubi",15,5,"dinheiro"),
-    (11,"Diamante","Pedra de Diamante",25,10,"dinheiro"),
-    (12,"Máscara Elegante","Uma máscara com jóias",50,15,"dinheiro"),
-    (13,"Baú de moedas","Baú com muitas moedas",50,0,"dinheiro"),
-    (14,"Saco de moedas","Saco com várias moedas",25,0,"dinheiro"),
-    (15,"Moeda","Moeda usada para compra de armas e equipamentos",1,0,"dinheiro"),
-    (16,"Faca de Combate","Faca de combate. Esta faca foi dada a você como um presente da sua falecida mãe, e voce nunca mais saiu sem ela.",0,0,"arma"),
-    (17,"Pistola","Pistola SG-09, feita especialmente para você para realizar sua missão",100,5,"arma"),
-    (18,"Escopeta","W-870, calibre 12 com ação de bombeamento",150,15,"arma"),
-    (19,"Rifle","TMP, leve e pequena, tem um ótimo desempenho",300,10,"arma"),
-    (20,"Sniper","Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20,"arma"),
-    (21,"Lança Foguete","Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20,"arma"),
-    (22,"colete balistico","Colete corportal capaz de reduzir o dano recebido em 10%",200,15,"equipamento"),
-    (23,"capacete","Um capacete capaz de reduzir o dano recebido em 5%",150,5,"equipamento"),
-    (24,"colar","Colar de ouro com pedras",50,10,"dinheiro");
+    (1,"consumivel"),
+    (2,"consumivel"),
+    (3,"consumivel"),
+    (4,"consumivel"),
+    (5,"consumivel"),
+    (6,"consumivel"),
+    (7,"consumivel"),
+    (8,"consumivel"),
+    (9,"dinheiro"),
+    (10,"dinheiro"),
+    (11,"dinheiro"),
+    (12,"dinheiro"),
+    (13,"dinheiro"),
+    (14,"dinheiro"),
+    (15,"dinheiro"),
+    (16,"arma"),
+    (17,"arma"),
+    (18,"arma"),
+    (19,"arma"),
+    (20,"arma"),
+    (21,"arma"),
+    (22,"equipamento"),
+    (23,"equipamento"),
+    (24,"dinheiro");
 
 
-INSERT INTO mapa (nome)
+
+INSERT INTO missao(nome, tipo)
 VALUES
-    ("Vila"),
-    ("Castelo"),
-    ("Ilha");
-
-INSERT INTO missao(nome, multiplicador, completa, tipo, missao_TIPO, nome_mapa, descricao)
-VALUES
-    ("Boas vindas",1,0,"assassinato",1,"Vila","Mate seu primeiro Ganado"),
-    ("A Procura",1,0,"recuperacao",2,"Vila","Entre na igreja, e encontre Ashley"),
-    ("El gigante",2,0,"dupla",3,"Vila","Mate o El Gigante e recupere a chave da igreja"),
-    ("Las Plagas",1,0,"assassinato",1,"Vila","Mate duas plagas"),
-    ("Chefe da Vila",3,0,"assassinato",1,"Vila","Mate Bitores Mendez"),
-    ("Armaduras",2,0,"assassinato",1,"Castelo","Mate as 3 armaduras e entre na câmara de Salazar"),
+    ("Boas vindas","assassinato"),
+    ("A Procura","recuperacao"),
+    ("El gigante","dupla"),
+    ("Las Plagas","assassinato"),
+    ("Chefe da Vila","assassinato"),
+    ("Armaduras","assassinato"),
     ("Recuperacao",2,0,"recuperacao",2,"Castelo","Pegue a chave da câmara na sala de tortura"),
     ("Verdugo",3,0,"dupla",3,"Castelo","Mate o Verdugo e recupere a chave da câmara"),
     ("Salazar",4,0,"assassinato",1,"Castelo","Mate Salazar"),
@@ -278,11 +278,11 @@ VALUES
     (2,4),
     (4,2),
     (4,9),
-    (9,4),  
-    (9,8),    
-    (8,9),    
-    (8,10),    
-    (10,8),    
+    (9,4),
+    (9,8),
+    (8,9),
+    (8,10),
+    (10,8),
     (10,11),
     (11,10),
     (11,12),
