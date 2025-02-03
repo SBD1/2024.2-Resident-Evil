@@ -14,74 +14,66 @@ A álgebra relacional é uma maneira precisa e matemática de expressar as opera
 ### 1. Listar todas as armas disponíveis no jogo e seus atributos:
 
 ```sql
-σ(arma)
+π(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni)(arma)
 ```
 
 ### 2. Buscar o nome das armas com dano maior que 50(exemplo):
 
 ```sql
 π(nome, dano)(σ(dano > 50)(arma))
-
 ```
 
 ### 3. Listar as salas disponíveis e os mapas a que pertencem:
 
 ```sql
-π(numero, nome, fk_mapa_nome)(sala)
-
+π(numero, nome, nome_mapa)(sala)
 ```
 
 ### 4. Encontrar os NPCs hostis no jogo:
 
 ```sql
-π(nome, tipo)(σ(tipo = 'Hostil')(npc))
-
+π(nome, tipo)(σ(tipo <> 'vendedor')(npc))
 ```
 
 ### 5. Exibir as entidades que estão em uma sala específica (ex.: sala 12):
 
 ```sql
-π(identidade, vida, dano)(σ(fk_sala_numero = 12)(entidade))
-
+π(identidade, vida, dano)(σ(fk_sala_numero = 12)(protagonista) 
+    ∪ σ(fk_sala_numero = 12)(instancianpc ⨝ npc ⨝ entidade))
 ```
 
 ### 6. Consultar os itens que estão no inventário específico (ex.: inventário 1):
 
 ```sql
-π(item.nome, item.descricao, possui.quantidade)
-(item ⨝ possui ⨝ σ(fk_inventario_idinventario = 1)(possui))
-
+π(item.nome, item.descricao, instanciaitem.idinstanciaitem)
+(item ⨝ instanciaitem ⨝ σ(id_inventario = 1)(instanciaitem))
 ```
 
 ### 7. Listar os itens e as salas em que estão disponíveis:
 
 ```sql
-π(item.nome AS item_nome, sala.nome AS sala_nome)
-(esta_item ⨝ item ⨝ sala)
-
+π(item.nome, sala.nome)
+(instanciaitem ⨝ inventario ⨝ protagonista ⨝ sala ⨝ item)
 ```
 
 ### 8. Listar todas as missões e se estão completas:
 
 ```sql
 π(nome, completa)(missao)
-
 ```
 
 ### 9. Exibir os NPCs em uma sala específica (ex.: sala 8):
 
 ```sql
-π(npc.nome, sala.nome AS sala_nome)
-(npc ⨝ esta_npc ⨝ sala)
-σ(sala.numero = 8)(sala)
-
+π(npc.nome, sala.nome)
+(npc ⨝ instancianpc ⨝ sala ⨝ σ(numero = 8)(sala))
 ```
 
 ### 10. Exibir todos os mercados e os itens disponíveis neles:
 
 ```sql
-π(mercado.fk_sala_numero AS mercado_numero, item.nome AS item_nome)
-(mercado ⨝ inventario ⨝ possui ⨝ item)
+π(npc.nome AS mercado, item.nome)
+(npc ⨝ vendedor ⨝ inventario ⨝ instanciaitem ⨝ item)
 ```
 
 ---
@@ -91,3 +83,5 @@ A álgebra relacional é uma maneira precisa e matemática de expressar as opera
 | Versão |       Descrição        |                     Autor(es)                      |    Data    |
 | :----: | :--------------------: | :------------------------------------------------: | :--------: |
 |  1.0   | Criação e documentação | [Anne de Capdeville](https://github.com/nanecapde) | 13/01/2025 |
+|  2.0   |         Ajuste         |     [Bruno Cruz](https://github.com/Brunocrzz)     | 02/02/2025 |
+

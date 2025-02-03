@@ -29,7 +29,7 @@ WHERE dano > 50;
 
 ### 3. Listar as salas disponíveis e os mapas a que pertencem:
 ```sql
-SELECT numero, nome, fk_mapa_nome 
+SELECT numero, nome, nome_mapa 
 FROM sala;
 ```
 
@@ -37,22 +37,24 @@ FROM sala;
 ```sql
 SELECT nome, tipo 
 FROM npc
-WHERE tipo = 'Hostil';
+WHERE tipo <> 'vendedor';
 ```
 
 ### 5. Exibir as entidades que estão em uma sala específica (ex.: sala 12):
 ```sql
-SELECT identidade, vida, dano 
-FROM entidade
-WHERE fk_sala_numero = 12;
+SELECT e.identidade, e.vida, e.dano
+FROM instanciaNPC i
+JOIN entidade e ON i.id_entidadenpc = e.identidade
+WHERE i.fk_sala_numero = 12;
 ```
 
 ### 6. Consultar os itens que estão no inventário específico (ex.: inventário 1):
 ```sql
-SELECT item.nome, item.descricao, possui.quantidade 
-FROM item
-JOIN possui ON item.iditem = possui.fk_item_iditem
-WHERE possui.fk_inventario_idinventario = 1;
+SELECT itemi.iditem, item.nome, item.descricao, item.valor, item.peso, item.tipo
+FROM instanciaitem 
+JOIN item ON instanciaitem.id_item = item.iditem
+JOIN inventario ON instanciaitem.id_inventario = inventario.idinventario
+WHERE inventario.idinventario = 1;
 ```
 
 ### 7. Listar os itens e as salas em que estão disponíveis:
@@ -71,27 +73,31 @@ FROM missao;
 
 ### 9. Exibir os NPCs em uma sala específica (ex.: sala 8):
 ```sql
-SELECT npc.nome, sala.nome AS sala_nome
-FROM npc
-JOIN esta_npc ON npc.fk_entidade_identidade = esta_npc.fk_instanciaNPC_idinstancianpc
-JOIN sala ON esta_npc.fk_sala_numero = sala.numero
-WHERE sala.numero = 8;
+SELECT npc.nome, npc.tipo, instanciaNPC.idinstancianpc
+FROM instanciaNPC 
+JOIN npc ON instanciaNPC.id_entidadenpc = npc.id_entidade
+WHERE instanciaNPC.fk_sala_numero = 8;
+
 ```
 
 ### 10. Exibir todos os mercados e os itens disponíveis neles:
 ```sql
-SELECT mercado.fk_sala_numero AS mercado_numero, item.nome AS item_nome
-FROM mercado
-JOIN inventario ON mercado.fk_sala_numero = inventario.fk_mercado_fk_sala_numero
-JOIN possui ON inventario.idinventario = possui.fk_inventario_idinventario
-JOIN item ON possui.fk_item_iditem = item.iditem;
+SELECT n.nome AS vendedor, i.nome AS item, i.descricao, i.valor, i.peso, i.tipo,
+       ROW_NUMBER() OVER(PARTITION BY n.nome ORDER BY i.iditem) AS item_numero
+FROM vendedor v
+JOIN npc n ON v.id_entidade = n.id_entidade
+JOIN inventario inv ON v.id_entidade = inv.id_instancianpc
+JOIN instanciaitem ii ON inv.idinventario = ii.id_inventario
+JOIN item i ON ii.id_item = i.iditem;
+
 ```
 
 ---
 
 ## Histórico de Versões
 
-| Versão |     Descrição      |                     Autor(es)                     |    Data    |
-| :----: | :----------------: | :-----------------------------------------------: | :--------: |
-|  1.0   | Criação | [Bruno Cruz](https://github.com/Brunocrzz) e [Breno Yuri](https://github.com/YuriBre) | 08/01/2025 |
-|  2.0   | Acrescentando o DQL | [Breno Yuri](https://github.com/YuriBre) | 13/01/2025 |
+| Versão |      Descrição      |                                       Autor(es)                                       |    Data    |
+| :----: | :-----------------: | :-----------------------------------------------------------------------------------: | :--------: |
+|  1.0   |       Criação       | [Bruno Cruz](https://github.com/Brunocrzz) e [Breno Yuri](https://github.com/YuriBre) | 08/01/2025 |
+|  2.0   | Acrescentando o DQL |                       [Breno Yuri](https://github.com/YuriBre)                        | 13/01/2025 |
+|  2.1   |       Ajuste        |                      [Bruno Cruz](https://github.com/Brunocrzz)                       | 02/02/2025 |

@@ -18,6 +18,7 @@ nav:
       - "Álgebra Relacional": entrega2/algebra-relacional.md
       - "Apresentação": entrega2/apresentação.md
   - "Terceira Entrega":
+      - "Triggers e Stored Procedures": entrega3/triggers.md
 
 theme:
   name: material
