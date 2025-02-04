@@ -4,80 +4,78 @@ Um dicionário de dados em um sistema de banco de dados é uma ferramenta essenc
 </br>
 ### Tabelas
 
-![Tabela Arma](../assets/tabela_arma.png)
+![Tabela 1](../assets/1.jpeg)
 </br>
 </br>
 </br>
-![Tabela Usa Arma](../assets/tabela_usa_arma.png)
+![Tabela 2](../assets/2.jpeg)
 </br>
 </br>
 </br>
-![Tabela Entidade](../assets/tabela_entidade.png)
+![Tabela 3](../assets/3.jpeg)
 </br>
 </br>
 </br>
-![Tabela Protagonista](../assets/tabela_protagonista.png)
+![Tabela 4](../assets/4.jpeg)
 </br>
 </br>
 </br>
-![Tabela NPC](../assets/tabela_npc.png)
+![Tabela 5](../assets/5.jpeg)
 </br>
 </br>
 </br>
-![Tabela Instância NPC](../assets/tabela_instancia_npc.png)
+![Tabela 6](../assets/6.jpeg)
 </br>
 </br>
 </br>
-![Tabela Inventário](../assets/tabela_inventario.png)
+![Tabela 7](../assets/7.jpeg)
 </br>
 </br>
 </br>
-![Tabela Inventário Possui](../assets/tabela_inventario_possui.png)
+![Tabela 8](../assets/8.jpeg)
 </br>
 </br>
 </br>
-![Tabela Missão](../assets/tabela_missao.png)
+![Tabela 9](../assets/9.jpeg)
 </br>
 </br>
 </br>
-![Tabela Mapa](../assets/tabela_mapa.png)
+![Tabela 10](../assets/10.jpeg)
 </br>
 </br>
 </br>
-![Tabela Sala](../assets/tabela_sala.png)
+![Tabela 11](../assets/11.jpeg)
 </br>
 </br>
 </br>
-![Tabela Item](../assets/tabela_item.png)
+![Tabela 12](../assets/12.jpeg)
 </br>
 </br>
 </br>
-![Tabela Item Está](../assets/tabela_item_esta.png)
+![Tabela 13](../assets/13.jpeg)
 </br>
 </br>
 </br>
-![Tabela Recompensa](../assets/tabela_recompensa.png)
+![Tabela 14](../assets/14.jpeg)
 </br>
 </br>
 </br>
-![Tabela Mercado](../assets/tabela_mercado.png)
+![Tabela 15](../assets/15.jpeg)
 </br>
 </br>
 </br>
-![Tabela Zumbi](../assets/tabela_zumbi.png)
+![Tabela 16](../assets/16.jpeg)
 </br>
 </br>
 </br>
-![Tabela Plaga](../assets/tabela_plaga.png)
+![Tabela 17](../assets/17.jpeg)
 </br>
 </br>
 </br>
-![Tabela Cachorro Zumbi](../assets/tabela_cachorro_zumbi.png)
-
+![Tabela 18](../assets/18.jpeg)
 
 | Versão |     Descrição      |                     Autor(es)                     |    Data    |
 | :----: | :----------------: | :-----------------------------------------------: | :--------: |
 |  1.0   | Criação | [Anne de Capdeville](https://github.com/nanecapde) | 24/11/2024 |
 |  1.1   | Atualização | [Anne de Capdeville](https://github.com/nanecapde) | 25/11/2024 |
-
-
+|  1.2   | Atualização | [Breno Yuri](https://github.com/YuriBre) | 03/02/2025 |

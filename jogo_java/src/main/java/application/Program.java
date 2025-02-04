@@ -1,19 +1,15 @@
 package application;
 
-import bancoDados.DatabasePool;
-import retaguarda.Game;
-import vanguarda.Mapa;
-import vanguarda.Menu;
 
+import retaguarda.Game;
+import vanguarda.Menu;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import static java.lang.System.exit;
-
 public class Program {
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException, IOException, SQLException {
+
         Scanner input = new Scanner(System.in);
         Menu.criarInicio();
         Thread.sleep(1250);
@@ -21,7 +17,11 @@ public class Program {
 
         Menu.criarMenu();
         int opcao = input.nextInt();
-        switch(opcao){
+
+        input.nextLine();
+
+        switch(opcao) {
+
             case 1:
                 System.out.println("Iniciando novo jogo...");
                 Game.newgame();
@@ -29,12 +29,16 @@ public class Program {
 
             case 2:
                 System.out.println("Carregando jogo...");
+                Game.load();
                 break;
-
             case 0:
                 System.out.println("Saindo do jogo...");
                 Thread.sleep(500);
-                exit(0);
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Opção inválida.");
+
         }
     }
 }
