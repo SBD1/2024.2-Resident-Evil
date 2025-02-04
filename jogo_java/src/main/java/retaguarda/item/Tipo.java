@@ -1,22 +1,18 @@
 package retaguarda.item;
 
 public enum Tipo {
-    arma,
-    equipamento,
-    consumivel,
-    dinheiro;
+    arma, consumivel, equipamento, dinheiro;
 
-    public static Tipo fromString(String tipo) {
-        if (tipo == null) {
-            throw new IllegalArgumentException("O tipo não pode ser nulo.");
+    public static Tipo fromString(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("Tipo não pode ser nulo.");
         }
-
-        return switch (tipo.toLowerCase()) {
-            case "arma" -> arma;
-            case "equipamento" -> equipamento;
-            case "consumivel" -> consumivel;
-            case "dinheiro" -> dinheiro;
-            default -> throw new IllegalArgumentException("Tipo desconhecido: " + tipo);
-        };
+        switch (str.toLowerCase()) {
+            case "arma": return arma;
+            case "consumivel": return consumivel;
+            case "equipamento": return equipamento;
+            case "dinheiro": return dinheiro;
+            default: throw new IllegalArgumentException("Tipo desconhecido: " + str);
+        }
     }
 }

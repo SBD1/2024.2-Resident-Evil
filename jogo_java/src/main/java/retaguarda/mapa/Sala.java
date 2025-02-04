@@ -3,12 +3,14 @@ package retaguarda.mapa;
 public class Sala {
     private int numero;
     private String nome;
-    private String nome_mapa;
+    private String nomeMapa;
+    private String descricao;
 
-    public Sala(int numero, String nome, String nome_mapa) {
+    public Sala(int numero, String nome, String nomeMapa, String descricao) {
         this.numero = numero;
         this.nome = nome;
-        this.nome_mapa = nome_mapa;
+        this.nomeMapa = nomeMapa;
+        this.descricao = descricao;
     }
 
     public int getNumero() {
@@ -20,7 +22,10 @@ public class Sala {
     }
 
     public String getNomeMapa() {
-        return nome_mapa;
+        return nomeMapa;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
 }

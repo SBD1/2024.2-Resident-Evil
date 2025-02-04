@@ -13,20 +13,8 @@ public class ItemSala {
         this.quantidade = quantidade;
     }
 
-    // Getters
-    public int getId() {
-        return id;
-    }
-
-    public int getFkSala() {
-        return fkSala;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
+    public int getId() { return id; }
+    public int getFkSala() { return fkSala; }
+    public Item getItem() { return item; }
+    public int getQuantidade() { return quantidade; }
 }

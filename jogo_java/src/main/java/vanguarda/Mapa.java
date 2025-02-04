@@ -27,7 +27,7 @@ public class Mapa {
     }
 
     public static void criarVila() throws InterruptedException {
-        System.out.println("Você está na vila de Raccoon City, uma cidade pequena e pacata, mas que esconde segredos terríveis.");
+        System.out.println("Você está na vila ");
         Thread.sleep(500);
         System.out.println("Aqui você pode encontrar a delegacia, a loja de armas, a farmácia e a mansão.");
         Thread.sleep(500);

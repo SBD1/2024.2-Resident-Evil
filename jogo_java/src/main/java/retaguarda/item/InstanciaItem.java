@@ -11,16 +11,11 @@ public class InstanciaItem {
         this.descricao = descricao;
     }
 
-    // Getters e Setters
-    public int getIdInstanciaItem() {
-        return idInstanciaItem;
-    }
+    public int getIdInstanciaItem() { return idInstanciaItem; }
+    public Item getItem() { return item; }
+    public String getDescricao() { return descricao; }
 
-    public Item getItem() {
-        return item;
-    }
-
-    public String getDescricao() {
-        return descricao;
+    public int getId(){
+        return this.idInstanciaItem;
     }
 }

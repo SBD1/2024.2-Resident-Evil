@@ -17,28 +17,10 @@ public class Item {
         this.tipo = tipo;
     }
 
-    // Getters e Setters
-    public int getIdItem() {
-        return idItem;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public int getValor() {
-        return valor;
-    }
-
-    public int getPeso() {
-        return peso;
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
+    public int getIdItem() { return idItem; }
+    public String getNome() { return nome; }
+    public String getDescricao() { return descricao; }
+    public int getValor() { return valor; }
+    public int getPeso() { return peso; }
+    public Tipo getTipo() { return tipo; }
 }

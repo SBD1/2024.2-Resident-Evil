@@ -3,10 +3,11 @@ package application;
 import retaguarda.Game;
 import vanguarda.Menu;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Program {
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException, IOException, SQLException {
         Scanner input = new Scanner(System.in);
         Menu.criarInicio();
         Thread.sleep(1250);

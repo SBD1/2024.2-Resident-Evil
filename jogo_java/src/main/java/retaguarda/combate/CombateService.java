@@ -7,17 +7,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CombateService {
-
-    public static void combateTurno(int idProtagonista, int idInimigo) {
-        String sql = "{CALL combateTurno(?, ?)}";
-        try (Connection connection = DatabasePool.getConnection();
-             CallableStatement stmt = connection.prepareCall(sql)) {
+    public static void combateTurnoInstancia(int idProtagonista, int idInstanciaNpc) {
+        String sql = "{CALL combateTurnoInstancia(?, ?)}";
+        try (Connection conn = DatabasePool.getConnection();
+             CallableStatement stmt = conn.prepareCall(sql)) {
 
             stmt.setInt(1, idProtagonista);
-            stmt.setInt(2, idInimigo);
+            stmt.setInt(2, idInstanciaNpc);
 
             boolean hasResultSet = stmt.execute();
-
             if (hasResultSet) {
                 try (ResultSet rs = stmt.getResultSet()) {
                     if (rs.next()) {
