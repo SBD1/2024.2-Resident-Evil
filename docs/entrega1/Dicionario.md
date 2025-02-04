@@ -78,4 +78,4 @@ Um dicionário de dados em um sistema de banco de dados é uma ferramenta essenc
 | :----: | :----------------: | :-----------------------------------------------: | :--------: |
 |  1.0   | Criação | [Anne de Capdeville](https://github.com/nanecapde) | 24/11/2024 |
 |  1.1   | Atualização | [Anne de Capdeville](https://github.com/nanecapde) | 25/11/2024 |
-|  1.3   | Atualização | [Breno Yuri](https://github.com/YuriBre) | 03/02/2025 |
+|  1.2   | Atualização | [Breno Yuri](https://github.com/YuriBre) | 03/02/2025 |
