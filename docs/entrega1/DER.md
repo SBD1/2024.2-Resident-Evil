@@ -4,7 +4,7 @@
 Diagrama de Entidade-Relacionamento (DER) do projeto de SBD1, Resident Evil.
 
 ### Imagem do DER
-![DER](../assets/DER.png)
+![DER](../assets/der.png)
 
 
  | Versão |     Descrição      |                     Autor(es)                     |    Data    |
