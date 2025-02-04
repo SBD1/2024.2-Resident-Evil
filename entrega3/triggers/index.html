@@ -964,99 +964,6 @@ BEGIN
 END$$
 
 
-
-CREATE PROCEDURE combateTurno(
-    IN p_id_protagonista INT,
-    IN p_id_inimigo INT,
-    IN p_enemyType VARCHAR(20)
-)
-BEGIN
-    DECLARE p_baseDamage INT DEFAULT 0;
-    DECLARE p_life INT DEFAULT 0;
-    DECLARE e_baseDamage INT DEFAULT 0;
-    DECLARE e_life INT DEFAULT 0;
-    DECLARE p_totalAttack INT DEFAULT 0;
-    DECLARE e_totalAttack INT DEFAULT 0;
-    DECLARE effectiveDamage INT DEFAULT 0;
-    DECLARE round INT DEFAULT 1;
-
-    SELECT dano, vida INTO p_baseDamage, p_life
-    FROM protagonista
-    WHERE id_entidade = p_id_protagonista;
-
-    SET p_totalAttack = p_baseDamage; 
-
-    IF p_enemyType = 'vendedor' THEN
-        SELECT dano, vida INTO e_baseDamage, e_life
-        FROM vendedor
-        WHERE id_entidade = p_id_inimigo;
-    ELSEIF p_enemyType = 'chefe' THEN
-        SELECT dano, vida INTO e_baseDamage, e_life
-        FROM chefe
-        WHERE id_entidade = p_id_inimigo;
-    ELSEIF p_enemyType = 'zumbi' THEN
-        SELECT dano, vida INTO e_baseDamage, e_life
-        FROM zumbi
-        WHERE id_entidade = p_id_inimigo;
-    ELSEIF p_enemyType = 'cachorro_zumbi' THEN
-        SELECT dano, vida INTO e_baseDamage, e_life
-        FROM cachorro_zumbi
-        WHERE id_entidade = p_id_inimigo;
-    ELSEIF p_enemyType = 'plaga' THEN
-        SELECT dano, vida INTO e_baseDamage, e_life
-        FROM plaga
-        WHERE id_entidade = p_id_inimigo;
-    ELSE
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Tipo de inimigo inválido';
-    END IF;
-
-    SET e_totalAttack = e_baseDamage; 
-
-    combat_loop: WHILE p_life &gt; 0 AND e_life &gt; 0 DO
-        SET effectiveDamage = p_totalAttack;
-        SET e_life = e_life - effectiveDamage;
-        IF e_life &lt; 0 THEN SET e_life = 0; END IF;
-
-        IF p_enemyType = 'vendedor' THEN
-            UPDATE vendedor SET vida = e_life WHERE id_entidade = p_id_inimigo;
-        ELSEIF p_enemyType = 'chefe' THEN
-            UPDATE chefe SET vida = e_life WHERE id_entidade = p_id_inimigo;
-        ELSEIF p_enemyType = 'zumbi' THEN
-            UPDATE zumbi SET vida = e_life WHERE id_entidade = p_id_inimigo;
-        ELSEIF p_enemyType = 'cachorro_zumbi' THEN
-            UPDATE cachorro_zumbi SET vida = e_life WHERE id_entidade = p_id_inimigo;
-        ELSEIF p_enemyType = 'plaga' THEN
-            UPDATE plaga SET vida = e_life WHERE id_entidade = p_id_inimigo;
-        END IF;
-
-        IF e_life = 0 THEN
-            UPDATE protagonista SET killcount = killcount + 1
-            WHERE id_entidade = p_id_protagonista;
-            DELETE FROM npc WHERE id_entidade = p_id_inimigo;
-            LEAVE combat_loop;
-        END IF;
-
-        SET effectiveDamage = e_totalAttack; 
-        SET p_life = p_life - effectiveDamage;
-        IF p_life &lt; 0 THEN SET p_life = 0; END IF;
-
-        UPDATE protagonista SET vida = p_life WHERE id_entidade = p_id_protagonista;
-
-        IF p_life = 0 THEN
-            LEAVE combat_loop;
-        END IF;
-
-        SET round = round + 1;
-    END WHILE;
-
-    IF e_life = 0 THEN
-        SELECT CONCAT('Combate encerrado. Protagonista venceu em ', round, ' turno(s).') AS Resultado;
-    ELSEIF p_life = 0 THEN
-        SELECT CONCAT('Combate encerrado. Protagonista foi derrotado em ', round, ' turno(s).') AS Resultado;
-    END IF;
-END$$
-
-
 CREATE PROCEDURE inserirProtagonista(IN pNickname VARCHAR(25))
 BEGIN
     INSERT INTO entidade (vida, dano) VALUES (100, 10);
@@ -1075,14 +982,12 @@ BEGIN
     DECLARE p_tipo VARCHAR(20);
     DECLARE p_vidaMax INT DEFAULT 0;
 
-    -- Obtém o id_entidadenpc e o tipo do NPC para a instância informada
     SELECT i.id_entidadenpc, n.tipo
       INTO p_idEnt, p_tipo
       FROM instancianpc i
       JOIN npc n ON i.id_entidadenpc = n.id_entidade
       WHERE i.idinstancianpc = p_idInstancia;
 
-    -- Verifica se o tipo é de boss (&quot;chefe&quot;) e obtém a vida máxima da tabela chefe
     IF p_tipo = 'chefe' THEN
         SELECT vida INTO p_vidaMax FROM chefe WHERE id_entidade = p_idEnt;
     ELSE
@@ -1097,6 +1002,46 @@ BEGIN
 
     SELECT CONCAT('Vida do boss (instância ', p_idInstancia, ') resetada para ', p_vidaMax) AS Resultado;
 END $$
+
+
+CREATE TRIGGER before_npc_delete
+BEFORE DELETE ON instancianpc
+FOR EACH ROW
+BEGIN
+    INSERT INTO backup_instancianpc (id_entidadenpc, fk_sala_numero, missao_nome, vida_atual)
+    VALUES (OLD.id_entidadenpc, OLD.fk_sala_numero, OLD.missao_nome, OLD.vida_atual);
+END$$
+
+
+CREATE TRIGGER after_protagonist_insert
+AFTER INSERT ON protagonista
+FOR EACH ROW
+BEGIN
+    DECLARE done INT DEFAULT 0;
+    DECLARE v_npc_id INT;
+    DECLARE v_last_room_id INT;
+    DECLARE v_missao_nome VARCHAR(30);
+    DECLARE v_vida_atual INT;
+
+    DECLARE npc_record CURSOR FOR 
+        SELECT id_entidadenpc, fk_sala_numero, missao_nome, vida_atual
+        FROM backup_instancianpc;
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+    OPEN npc_record;
+
+    FETCH npc_record INTO v_npc_id, v_last_room_id, v_missao_nome, v_vida_atual;
+
+    WHILE NOT done DO
+        INSERT INTO instancianpc (id_entidadenpc, fk_sala_numero, missao_nome, id_protagonista, vida_atual)
+        VALUES (v_npc_id, v_last_room_id, v_missao_nome, NEW.id_entidade, v_vida_atual);
+        FETCH npc_record INTO v_npc_id, v_last_room_id, v_missao_nome, v_vida_atual;
+    END WHILE;
+
+    CLOSE npc_record;
+END$$
+
 
 DELIMITER ;
 </code></pre>
