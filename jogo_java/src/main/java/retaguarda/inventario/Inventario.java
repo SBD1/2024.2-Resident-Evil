@@ -5,17 +5,17 @@ import retaguarda.item.InstanciaItem;
 import java.util.List;
 
 public class Inventario {
-    private int idinventario;
-    private int pesomax;
-    private int id_entidade;
-    private int id_instancianpc;
+    private int idInventario;
+    private int pesoMax;
+    private int idEntidade;
+    private int idInstanciaNPC;
     private List<InstanciaItem> itens;
 
-    public Inventario(int idinventario, int pesomax, int id_entidade, int id_instancianpc, List<InstanciaItem> itens) {
-        this.idinventario = idinventario;
-        this.pesomax = pesomax;
-        this.id_entidade = id_entidade;
-        this.id_instancianpc = id_instancianpc;
+    public Inventario(int pesoMax, int idEntidade, int idInstanciaNPC, List<InstanciaItem> itens) {
+        this.pesoMax = pesoMax;
+        this.idEntidade = idEntidade;
+        this.idInstanciaNPC = idInstanciaNPC;
+
         this.itens = itens;
     }
 
@@ -30,6 +30,5 @@ public class Inventario {
     public List<InstanciaItem> listarItens() {
         return itens;
     }
-
 
 }
