@@ -20,42 +20,120 @@ VALUES
     (1, 'Entrada da Vila', 'Vila', NULL),
     (2, 'Praça Principal da Vila', 'Vila', NULL),
     (3, 'Cabana de Luis', 'Vila', 'A cabana é pequena, com paredes de madeira envelhecida e um chão de tábuas rangentes.  No fundo da cabana, há uma porta entreaberta que leva a um pequeno porão. De lá, você ouve o som de algo se movendo. Ao entrar no porão, você se depara com um homem sentado em uma cadeira, fumando um cigarro. 
-
     - "Luis Serra, certo? Parece que você tem informações que eu preciso."
     - "Whoa, whoa! Calma, amigo. Eu sou um aliado, não um inimigo.
     -  "Depende do que você tem a dizer. O que você sabe sobre essa aldeia? E sobre a garota que foi sequestrada?"
     - "Ah, sim, a filha do presidente... Ashley, certo? Parece que ela se meteu em uma enrascada feia. Sabe, essa aldeia não é o que parece. Os moradores... eles não estão mais no controle de si mesmos."
     - "O que você quer dizer com isso?"
     -  "Há algo dentro deles. Um parasita. Chama-se Las Plagas. É antigo, muito antigo. A seita que controla essa aldeia reviveu essa coisa e está usando-a para transformar as pessoas em... bem, você já viu. Monstros obedientes. Eu tenho os planos da seita. Sei onde eles estão mantendo a garota e como derrotar essas coisas. Você precisa de mim, amigo.".'),
-    (4, 'Igreja', 'Vila', NULL),
+
+    (4, 'Igreja', 'Vila', 'Você chega à igreja, um local sombrio e imponente, com vitrais quebrados que filtram a luz do sol em padrões distorcidos. A grande porta de madeira da igreja está trancada, e você segura a chave obtida após a batalha contra El Gigante. Você insere a chave na fechadura, e a porta range ao se abrir. No fundo da igreja, Luis está sentado em um banco, fumando um cigarro e olhando para o altar.
+    - "Ah, Leon. Eu sabia que você chegaria até aqui. Você é persistente, eu dou isso a você."
+    - "Luis. A chave me trouxe até aqui. Agora, me diga o que você sabe. Onde está Ashley?"
+    - "Ashley está viva, mas não está segura. A seita a levou para um lugar mais... controlado. E essa chave que você usou para entrar aqui é apenas o começo. Agora, você precisa seguir para a casa do chefe Bitores Méndez."
+    - "Bitores Méndez? Quem é ele?"
+    - "O líder da vila. Ele é o responsável por tudo isso. Um homem grande, forte e... bem, digamos que ele não é muito amigável. Ele está infectado com Las Plagas, mas de uma forma diferente. Ele controla os outros, como um pastor conduzindo seu rebanho."
+    - "E o que ele quer com Ashley?"
+    - "Ela é parte do plano deles. Eles precisam dela para algo maior, algo que envolve Las Plagas. Se você quer salvá-la, precisa chegar a Méndez antes que seja tarde demais." A Casa dele fica logo após a Cabana Abandonada.'),
+
     (5, 'Torre de Vigia', 'Vila', 'A torre de vigia é uma estrutura alta e precária, feita de madeira envelhecida e amarrada com cordas gastas. Ela se ergue acima das árvores, oferecendo uma vista ampla da vila e dos arredores. Da base da torre, surge uma porta de madeira, porém sem nenhum caminho ou trajeto visível que leve a ela. Ao olhar ao redor,  você percebe que está cercado por paredes de pedras antigas e musgosas, manchas vermelhas de sangue surgem pelo chão de terra batida. Então você percebe que está no centro de uma arena. De repente, um rugido ecoa e o chão treme levemente. El Gigante, uma criatura colossal e deformada, emerge das sombras. Ele é uma massa de músculos retorcidos e pele pálida, com olhos que brilham com uma fúria primitiva.' ),
+
     (6, 'Caminho para o Lago', 'Vila', NULL),
     (7, 'Lago', 'Vila', NULL),
-    (8, 'Casa do Chefe Bitores Mendez', 'Vila', NULL),
+
+    (8, 'Casa do Chefe Bitores Mendez', 'Vila', 'A casa do chefe da vila, Bitores Méndez, é uma estrutura imponente e sombria, localizada no ponto mais alto da colina, dominando toda a região. A construção é feita de pedra escura e madeira envelhecida, com detalhes que lembram uma fortaleza medieval. Ao entrar na casa, você vê Bitores Méndez descendo as escadas. Ele é uma figura imponente, com mais de dois metros de altura, vestindo um casaco longo e surrado. Seu rosto está parcialmente escondido sob um chapéu de aba larga, mas seus olhos brilham com uma intensidade perturbadora. Ele carrega um cajado enorme, que parece mais uma arma do que um objeto cerimonial.'),
+
     (9, 'Cabana Abandonada', 'Vila', NULL),
-    (10, 'Caminho para o Castelo', 'Vila', NULL),
-    (11, 'Entrada do Castelo', 'Castelo', NULL),
-    (12, 'Salão Principal', 'Castelo', NULL),
+
+    (10, 'Caminho para o Castelo', 'Vila', 'Após derrotar Bitores Méndez em uma batalha intensa, Leon explora a casa do chefe da vila em busca de Ashley. Você segue um corredor escuro e estreito, iluminado apenas por tochas tremeluzentes nas paredes. Você chega a uma porta trancada no final do corredor. Com um chute forte, a porta se abre, revelando uma pequena sala iluminada por uma única janela alta. No centro da sala, Ashley está sentada em uma cadeira de madeira, com as mãos amarradas. Ela parece assustada, mas ilesa.
+     - “Leon! Você veio... eu sabia que você viria!”
+    - "Está tudo bem agora. Você está machucada?"
+    - "Não, estou bem. Eles me mantiveram aqui, mas não me machucaram. Só estou... com medo."
+    - "Você está segura agora. Vamos sair daqui."
+    Você e Ashley saem da sala, mas ao entrar no corredor, eles ouvem um som distante: passos pesados e arrastados, como se algo estivesse se aproximando. Você segura sua arma, pronto para proteger Ashley.
+    - "Fique atrás de mim. Não importa o que aconteça, não se afaste."
+    Leon e Ashley saem da casa de Méndez, mas ao chegarem do lado de fora, percebem que a vila está em polvorosa. Os moradores infectados estão se reunindo, como se estivessem sendo chamados para algo maior. De repente, um rádio que Leon carrega começa a chiar. A voz de Luis Serra surge, fraca e distante.
+    - "Leon, você está aí? Se conseguiu resgatar a garota, precisa ir para o castelo. É lá que Saddler está. Eles vão levá-la para lá de qualquer jeito."’
+    - "Castelo? Onde fica isso?"
+    - "Siga o caminho para o norte, depois da floresta. Você verá uma ponte levadiça.
+    O rádio desliga, e Leon olha para Ashley, que parece ainda mais assustada.
+    - "Castelo? Isso parece ainda pior do que aqui..."
+    -  "Não temos escolha. Se Saddler está lá, é onde precisamos ir. Vamos acabar com isso de uma vez por todas.".'),
+
+    (11, 'Entrada do Castelo', 'Castelo', 'O castelo é uma estrutura colossal, feita de pedra negra e cinzenta, que parece ter sido esculpida diretamente na montanha. Suas torres altas e pontiagudas se projetam em direção ao céu, como garras prontas para agarrar qualquer um que se aproxime. As paredes são grossas e reforçadas, com poucas janelas, dando ao local uma aparência impenetrável e sombria. A entrada principal é uma grande ponte levadiça que cruza um abismo profundo. A ponte está abaixada, mas parece frágil, com tábuas de madeira podres e correntes enferrujadas que rangem ao vento.'),
+
+    (12, 'Salão Principal', 'Castelo', 'Leon e Ashley entram no salão, olhando ao redor com cautela. De repente, as portas atrás deles se fecham com um baque alto, ecoando pelo salão. Leon se vira rapidamente, mas já é tarde demais. De uma das portas laterais, surgem vários Cultistas, seguidores fanáticos de Saddler, vestindo túnicas escuras e máscaras grotescas. Eles cercam Leon e Ashley, brandindo armas primitivas, como foices e machados. Antes que Leon possa reagir, uma figura baixa e imponente surge das sombras. É Ramon Salazar, o jovem e perturbado governante do castelo.
+    - "Ah, o agente especial e a bela dama. Que honra tê-los em meu castelo. Mas, infelizmente, vocês chegaram tarde demais."
+    - "Onde está Saddler? O que vocês querem com a Ashley?"
+    - "Oh, Saddler está ocupado com planos maiores. Quanto à garota... ela será útil para nossos experimentos."
+    Antes que Leon possa agir, os Cultistas avançam. Enquanto ele luta contra eles, Salazar usa o cajado para ativar uma armadilha no chão. O tapete vermelho se abre, revelando uma passagem secreta. Ashley, que estava próxima, cai na passagem antes que Leon possa alcançá-la. A passagem se fecha, e Leon é deixado sozinho no salão, cercado por Cultistas. Ele sabe que precisa derrotá-los e encontrar uma maneira de seguir Ashley, mas o caminho à frente será ainda mais perigoso. Enquanto luta contra os Cultistas,  seu rádio começa a chiar, e a voz de Luis Serra surge.
+    -  "Leon, você está aí? Parece que você está em apuros, amigo."
+    - "Luis! Onde diabos você estava? Eles levaram Ashley!"
+    - "Eu sei, eu vi. Saddler e Salazar estão levando ela para as profundezas do castelo. Mas não se preocupe, eu posso te ajudar. Estou no Salão de Banquete. Eu tenho algo que pode te ajudar a chegar até Ashley, mas você precisa vir até aqui. Siga o caminho pelo Jardim do Castelo.”.'),
+
     (13, 'Sala de Armaduras', 'Castelo', NULL),
     (14, 'Jardim do Castelo', 'Castelo', NULL),
-    (15, 'Sala de Tortura', 'Castelo', NULL),
-    (16, 'Salão de Banquete', 'Castelo', NULL),
-    (17, 'Câmara de Salazar', 'Castelo', NULL),
+
+    (15, 'Sala de Tortura', 'Castelo', 'A Sala de Tortura é um local que exala dor e sofrimento. As paredes de pedra são grossas e úmidas, com ganchos de ferro enferrujados pendurados em correntes que balançam levemente ao vento frio que entra por uma pequena janela gradeada no alto. De repente, as tochas nas paredes tremem, e um som baixo e gutural ecoa pela sala. O chão começa a tremer levemente, e uma névoa fria se espalha pelo ambiente. Do túnel escuro no fundo da sala, uma figura alta e sinistra emerge lentamente. Verdugo é uma criatura grotesca e aterrorizante, vestindo uma capa preta e um capuz que esconde seu rosto. Ele carrega uma lâmina afiada em uma das mãos, e seu corpo parece se mover de forma quase sobrenatural, como se flutuasse acima do chão. Sua presença é gelada, e o ar ao seu redor parece ficar mais frio.'),
+
+    (16, 'Salão de Banquete', 'Castelo', 'Ao entrar no Salão de banquete, Leon se depara com uma mesa de madeira. No centro da mesa, há uma cadeira de madeira entalhada, virada de costas para a entrada. Quando Leon se aproxima, a cadeira gira lentamente, revelando Luis Serra, sentado e segurando o lado do peito, onde uma mancha vermelha escura se espalha por sua camisa.
+    - "Luis! O que aconteceu?"
+    - "Ah, Leon... finalmente. Eu sabia que você viria. Mas parece que eu... não vou poder te ajudar muito mais. Eles me pegaram desprevenido. Mas escute, Leon... você precisa ir até a sala de tortura... lá, você encontrará uma chave... uma chave que abre a passagem para a Câmara de Salazar... é o único caminho... A sala de tortura... ela fica... ela fica...”
+    Antes que Luis possa terminar a frase, sua mão cai, e ele fecha os olhos, sem vida. Leon segura o ombro dele, mas sabe que já é tarde demais. Então surge uma voz familiar.
+    - "Parece que você está sempre no lugar errado na hora errada, Leon."
+    -  "Ada? O que você está fazendo aqui?"
+    - "Eu poderia fazer a mesma pergunta. Mas, pelo visto, você precisa de ajuda.  Eu conheço o castelo melhor do que você imagina. Posso te dizer o caminho até a sala de tortura... se você confiar em mim."
+    - "Não tenho muita escolha, não é? Vamos logo, antes que Saddler faça algo com Ashley.".'),
+
+    (17, 'Câmara de Salazar', 'Castelo', 'A Câmara de Salazar é uma sala circular, com paredes altas decoradas por estátuas de cavaleiros e brasões antigos. No centro da sala, há um trono de madeira entalhada, vazio. No fundo da sala, há uma mesa de madeira com uma carta dobrada, com o nome de Leon escrito em letras elegantes. Leon se aproxima da mesa e pega a carta, abrindo-a com cuidado. Ele lê o conteúdo em voz alta:
+
+    Carta de Salazar:
+    "Caro Leon,
+    Você é mais persistente do que eu imaginava. Derrotar Verdugo e chegar até aqui não é uma façanha para qualquer um. Mas, infelizmente, você chegou tarde demais. A garota, Ashley, não está mais aqui. Ela foi levada para a ilha, onde nosso mestre, Osmund Saddler, aguarda sua chegada.
+    Se você deseja resgatá-la, terá que enfrentar os desafios que preparamos para você. Mas cuidado, agente... a ilha não é um lugar para os fracos de coração. Espero vê-lo em breve.
+    Assinado, Ramon Salazar.".'),
+
     (18, 'Caminho para o Elevador', 'Castelo', NULL),
-    (19, 'Sala do Elevador', 'Castelo', NULL),
-    (20, 'Área do Chefe Salazar', 'Castelo', NULL),
-    (21, 'Praia da Ilha', 'Ilha', NULL),
+
+    (19, 'Sala do Elevador', 'Castelo', 'Após derrotar Ramon Salazar e escapar da sala em colapso, Leon segue por um corredor estreito e escuro que leva a um elevador. O elevador parece ser a única maneira de descer até a doca, onde um barco está ancorado. Leon entra no elevador, que começa a descer lentamente, rangendo e balançando a cada movimento. O som das correntes e engrenagens ecoa pela sala, criando uma atmosfera tensa e claustrofóbica.'),
+
+    (20, 'Área do Chefe Salazar', 'Castelo', 'Leon finalmente chega à Área do Chefe Salazar, um local que serve como o santuário pessoal de Ramon Salazar. O ambiente é grandioso e aterrorizante, refletindo a personalidade excêntrica e cruel do antagonista. Salazar é uma figura pequena e frágil, mas sua presença é intimidante. Ele está vestido com roupas extravagantes, cheias de detalhes dourados e bordados intricados. Seu rosto é pálido, e seus olhos brilham com uma mistura de loucura e crueldade.'),
+
+    (21, 'Praia da Ilha', 'Ilha', 'Leon e Ada chegam à praia da ilha após uma curta viagem de barco. O local é sombrio e desolado, com o som das ondas batendo contra as rochas e o vento frio soprando. A ilha é visível ao fundo, com suas estruturas fortificadas e luzes piscando na escuridão. Leon e Ada desembarcam do barco, olhando ao redor com cautela. Ada se aproxima de Leon, com um olhar sério.
+    - "Leon, precisamos nos mover rápido. Saddler sabe que estamos aqui, e ele não vai facilitar as coisas para nós. Ashley está sendo mantida na sala de controle, no centro da ilha. Mas para chegar até lá, você precisa de uma chave especial. E essa chave está no laboratório. Siga pela fábrica de armas que você ira encontrar."
+    - "Por que você está me ajudando, Ada? O que você realmente quer?"
+    - "Talvez eu goste de ver você se esforçando. Ou talvez eu tenha meus próprios motivos. De qualquer forma, vamos logo. Saddler não vai esperar para sempre.".'),
+
     (22, 'Área de Contêineres', 'Ilha', NULL),
     (23, 'Fábrica de Armas', 'Ilha', NULL),
-    (24, 'Laboratório de Experimentos', 'Ilha', NULL),
+
+    (24, 'Laboratório de Experimentos', 'Ilha', 'Leon finalmente chega ao laboratório da ilha. Este local é sombrio e aterrorizante, cheio de equipamentos científicos e experimentos horripilantes relacionados a Las Plagas. Nas paredes, há prateleiras cheias de amostras de Las Plagas em frascos de vidro, algumas delas ainda se movendo, como se estivessem vivas. Em uma mesa no final da sala, está a chave da Sala de Controle. Ao se aproximar da chave, um som gutural e perturbador ecoa pelo laboratório. Surge então o Regenerator, uma criatura horrível e deformada, com uma pele pálida e translúcida que revela órgãos internos pulsantes. Seus braços são longos e desproporcionais, e seu rosto é uma massa disforme de carne e dentes afiados.'),
+
     (25, 'Câmara de Tortura', 'Ilha', NULL),
     (26, 'Armazém', 'Ilha', NULL),
-    (27, 'Sala de Controle', 'Ilha', NULL),
+
+    (27, 'Sala de Controle', 'Ilha', 'Leon entra na sala de controle, armas em punho, os olhos atentos. A iluminação é baixa, apenas o brilho de monitores quebrados ilumina o ambiente. No centro da sala, Ashley está amarrada a uma cadeira. - “Ashley! Você está bem? Precisamos sair daqui agora”
+    - “Sim, mas... e Saddler? Ele ainda está por aí.”
+    - “Eu vou acabar com ele. Mas antes, preciso que você vá para o porto. Tem um barco lá esperando por nós. Confie em mim. Vá agora. Eu encontro você lá.”.'),
+
     (28, 'Caverna Subterrânea', 'Ilha', NULL),
-    (29, 'Área do Helicóptero', 'Ilha', NULL),
+
+    (29, 'Área do Helicóptero', 'Ilha', 'Leon finalmente chega à área do helicóptero, um local aberto e amplo, com uma pista de pouso e um helicóptero abandonado. O céu está nublado, e o vento sopra forte, criando uma atmosfera tensa e dramática. No fundo da área, há um elevador que leva para a área do chefe Saddler. Leon se aproxima do elevador, mas antes que ele possa tentar abri-la, uma voz familiar ecoa pela área.
+    - "Bem, bem, bem... se não é o agente especial Leon. Há quanto tempo, hein?"
+    - "Krauser? O que você está fazendo aqui?"
+    - "Eu poderia fazer a mesma pergunta. Mas, pelo visto, você está atrás da garota, não é? Saddler não vai gostar disso."
+    - "Onde está Ashley? O que você fez com ela?"
+    - "Ah, ela está segura... por enquanto. Mas você, Leon, não deveria se preocupar com ela. Deveria se preocupar consigo mesmo."
+    - "Eu não estou aqui para jogos, Krauser. Me devolva Ashley, ou você vai se arrepender."
+    - "Tão corajoso... mas tão ingênuo. Você realmente acha que pode derrotar a mim, o escolhido de Saddler? Eu sou mais do que um simples homem, Leon. Eu sou... um deus.".'),
+
     (30, 'Elevador', 'Ilha', NULL),
-    (31, 'Área do Chefe Saddler', 'Ilha', NULL),
-    (32, 'Porto', 'Ilha', NULL),
+    (31, 'Área do Chefe Saddler', 'Ilha', ' Leon chega a uma arena aberta, cheia de maquinários antigos e estruturas metálicas. No centro, Saddler o espera, um sorriso cruel nos lábios. - “Você chegou longe, Leon. Mas tudo termina aqui.”
+    - “Se você acha que vou deixar você sair vivo, está enganado.”
+    Saddler ri e, com um estalo dos dedos, seu corpo começa a se transformar em uma monstruosidade grotesca, tentáculos emergindo de seu torso. A batalha final começa.'),
+
+    (32, 'Porto', 'Ilha', 'Depois de derrotar Saddler, Leon se encontra com Ada e Ashley no Porto, e fogem utilizando o barco.'),
+
     (33, 'Mercado', 'Vila', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
     - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".'),
     (34, 'Mercado', 'Castelo', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
@@ -64,6 +142,7 @@ VALUES
     - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".'),
     (36, 'Mercado', 'Ilha', 'No centro do mercado, uma figura se destaca: o Mercador. Ele é um homem enigmático, vestindo um casaco surrado e um chapéu que esconde parcialmente seu rosto. O Mercador fala com uma voz rouca e amigável, sempre pronta para negociar:
     - "Ah, olá, estranho! O que você precisa? Armas? Munição? Ou talvez... algo mais especial?".');
+
 
 INSERT INTO entidade(identidade, tipo)
 VALUES
@@ -207,21 +286,21 @@ VALUES
     (23, 16, 23, 'Soldados!', NULL, 150),
     (24, 5, 2, NULL, NULL, 100),
     (25, 4, 2, NULL, NULL, 100),
-    (26, 7, 9, NULL, NULL, 150), 
-    (27, 7, 9, NULL, NULL, 150), 
+    (26, 7, 9, NULL, NULL, 150),
+    (27, 7, 9, NULL, NULL, 150),
     (28, 2, 9, NULL, NULL, 100),
     (29, 2, 10, NULL, NULL, 100),
-    (30, 13, 10, NULL, NULL, 100), 
+    (30, 13, 10, NULL, NULL, 100),
     (31, 3, 12, NULL, NULL, 100),
     (32, 3, 12, NULL, NULL, 100),
     (33, 6, 12, NULL, NULL, 150),
     (34, 3, 14, NULL, NULL, 100),
-    (35, 7, 16, NULL, NULL, 150), 
+    (35, 7, 16, NULL, NULL, 150),
     (36, 6, 16, NULL, NULL, 150),
     (37, 16, 22, NULL, NULL, 150),
     (38, 16, 22, NULL, NULL, 150),
     (39, 16, 23, NULL, NULL, 150),
-    (40, 13, 23, NULL, NULL, 100), 
+    (40, 13, 23, NULL, NULL, 100),
     (41, 6, 25, NULL, NULL, 150),
     (42, 6, 25, NULL, NULL, 150),
     (43, 16, 23, NULL, NULL, 150);
@@ -242,12 +321,12 @@ VALUES
 
 INSERT INTO arma(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni, descricao, valor, peso)
 VALUES
-    (16,"Faca de Combate",10,1,0.00,10.00,NULL, "Faca de combate. Esta faca foi dada a você como um presente da sua falecida mãe, e voce nunca mais saiu sem ela.",0,0),
-    (17,"Pistola",15,1,10.00,20.00,15, "Pistola SG-09, feita especialmente para você para realizar sua missão",100,5),
-    (18,"Escopeta",40,1,30.00,5.00,8, "W-870, calibre 12 com ação de bombeamento",150,15),
-    (19,"Rifle",35,1,8.00,10.00,30, "TMP, leve e pequena, tem um ótimo desempenho",300,10),
-    (20,"Sniper",60,1,3.00,25.00,5, "Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20),
-    (21,"Lança Foguete",200,1,30.00,10.00,1,"Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20);
+    (16,"Faca de Combate",20,1,0.00,10.00,NULL, "Faca de combate. Esta faca foi dada a você como um presente da sua falecida mãe, e voce nunca mais saiu sem ela.",0,0),
+    (17,"Pistola",30,1,10.00,20.00,15, "Pistola SG-09, feita especialmente para você para realizar sua missão",100,5),
+    (18,"Escopeta",80,1,30.00,5.00,8, "W-870, calibre 12 com ação de bombeamento",150,15),
+    (19,"Rifle",70,1,8.00,10.00,30, "TMP, leve e pequena, tem um ótimo desempenho",300,10),
+    (20,"Sniper",120,1,3.00,25.00,5, "Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20),
+    (21,"Lança Foguete",400,1,30.00,10.00,1,"Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20);
 
 INSERT INTO equipamento (id_item, defesa, nivel, nome, descricao, valor, peso)
 VALUES
@@ -310,7 +389,7 @@ VALUES
     (7, 4, 1, NULL),
     (8, 5, 1, NULL),
     (9, 18, 1, NULL),
-    (10, 23, 1, NULL), 
+    (10, 23, 1, NULL),
     (11, 20, 2, NULL),
     (12, 18, 2, NULL),
     (13, 23, 2, NULL),
@@ -340,7 +419,7 @@ VALUES
     (37, 5, 4, NULL),
     (38, 5, 4, NULL),
     (39, 20, 4, NULL),
-    (40, 4, NULL, NULL),  
+    (40, 4, NULL, NULL),
     (41, 4, NULL, NULL),
     (42, 4, NULL, NULL),
     (43, 4, NULL, NULL),
@@ -348,29 +427,29 @@ VALUES
     (45, 4, NULL, NULL),
     (46, 5, NULL, NULL),
     (47, 5, NULL, NULL),
-    (48, 5, NULL, NULL), 
-    (79, 5, NULL, NULL), 
+    (48, 5, NULL, NULL),
+    (79, 5, NULL, NULL),
     (49, 6, NULL, NULL),
-    (50, 6, NULL, NULL),  
+    (50, 6, NULL, NULL),
     (51, 7, NULL, NULL),
-    (52, 7, NULL, NULL), 
-    (53, 8, NULL, NULL), 
-    (54, 9, NULL, NULL), 
-    (55, 9, NULL, NULL), 
-    (56, 10, NULL, NULL), 
+    (52, 7, NULL, NULL),
+    (53, 8, NULL, NULL),
+    (54, 9, NULL, NULL),
+    (55, 9, NULL, NULL),
+    (56, 10, NULL, NULL),
     (57, 11, NULL, NULL),
-    (58, 11, NULL, NULL), 
+    (58, 11, NULL, NULL),
     (59, 12, NULL, NULL),
-    (60, 12, NULL, NULL), 
-    (61, 13, NULL, NULL), 
+    (60, 12, NULL, NULL),
+    (61, 13, NULL, NULL),
     (62, 14, NULL, NULL),
     (63, 14, NULL, NULL),
     (64, 14, NULL, NULL),
-    (65, 14, NULL, NULL),  
+    (65, 14, NULL, NULL),
     (66, 15, NULL, NULL),
-    (67, 15, NULL, NULL),  
-    (68, 24, NULL, NULL), 
-    (69, 24, NULL, NULL),   
+    (67, 15, NULL, NULL),
+    (68, 24, NULL, NULL),
+    (69, 24, NULL, NULL),
     (70, 14, 6, 'El gigante'),
     (71, 17, 6, 'El gigante'),
     (72, 13, 11, 'Chefe da Vila'),
