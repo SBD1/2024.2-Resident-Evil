@@ -19,7 +19,7 @@ INSERT INTO sala(numero, nome, nome_mapa, descriçao)
 VALUES
     (1, 'Entrada da Vila', 'Vila', NULL),
     (2, 'Praça Principal da Vila', 'Vila', NULL),
-    (3, 'Cabana de Luis', 'Vila', 'A cabana é pequena, com paredes de madeira envelhecida e um chão de tábuas rangentes.  No fundo da cabana, há uma porta entreaberta que leva a um pequeno porão. De lá, você ouve o som de algo se movendo. Ao entrar no porão, você se depara com um homem sentado em uma cadeira, fumando um cigarro. 
+    (3, 'Cabana de Luis', 'Vila', 'A cabana é pequena, com paredes de madeira envelhecida e um chão de tábuas rangentes.  No fundo da cabana, há uma porta entreaberta que leva a um pequeno porão. De lá, você ouve o som de algo se movendo. Ao entrar no porão, você se depara com um homem sentado em uma cadeira, fumando um cigarro.
     - "Luis Serra, certo? Parece que você tem informações que eu preciso."
     - "Whoa, whoa! Calma, amigo. Eu sou um aliado, não um inimigo.
     -  "Depende do que você tem a dizer. O que você sabe sobre essa aldeia? E sobre a garota que foi sequestrada?"
@@ -321,12 +321,12 @@ VALUES
 
 INSERT INTO arma(id_item, nome, dano, nivel, chanceerro, chancecritico, maxmuni, descricao, valor, peso)
 VALUES
-    (16,"Faca de Combate",20,1,0.00,10.00,NULL, "Faca de combate. Esta faca foi dada a você como um presente da sua falecida mãe, e voce nunca mais saiu sem ela.",0,0),
-    (17,"Pistola",30,1,10.00,20.00,15, "Pistola SG-09, feita especialmente para você para realizar sua missão",100,5),
-    (18,"Escopeta",80,1,30.00,5.00,8, "W-870, calibre 12 com ação de bombeamento",150,15),
-    (19,"Rifle",70,1,8.00,10.00,30, "TMP, leve e pequena, tem um ótimo desempenho",300,10),
-    (20,"Sniper",120,1,3.00,25.00,5, "Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20),
-    (21,"Lança Foguete",400,1,30.00,10.00,1,"Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20);
+    (16,"Faca de Combate",40,1,0.00,10.00,NULL, "Faca de combate. Esta faca foi dada a você como um presente da sua falecida mãe, e voce nunca mais saiu sem ela.",0,0),
+    (17,"Pistola",60,1,10.00,20.00,15, "Pistola SG-09, feita especialmente para você para realizar sua missão",100,5),
+    (18,"Escopeta",160,1,30.00,5.00,8, "W-870, calibre 12 com ação de bombeamento",150,15),
+    (19,"Rifle",140,1,8.00,10.00,30, "TMP, leve e pequena, tem um ótimo desempenho",300,10),
+    (20,"Sniper",240,1,3.00,25.00,5, "Stingray, peças reforçadas com fibra de carbono o tornam leve e robusto.",400,20),
+    (21,"Lança Foguete",800,1,30.00,10.00,1,"Lanca-foguetes sem recuo de uso único. Leve e de fácil manuseio, é uma arma de alta potência",800,20);
 
 INSERT INTO equipamento (id_item, defesa, nivel, nome, descricao, valor, peso)
 VALUES
