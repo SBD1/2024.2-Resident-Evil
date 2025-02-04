@@ -360,8 +360,9 @@ ALTER TABLE protagonista ADD CONSTRAINT FK_protagonista_4
 
 ALTER TABLE protagonista ADD CONSTRAINT FK_protagonista_5
     FOREIGN KEY (arma_equipada)
-    REFERENCES instanciaitem (id_item)
+    REFERENCES item(id_item)
     ON DELETE CASCADE;    
+   
 
 ALTER TABLE dinheiro ADD CONSTRAINT FK_dinheiro_2
     FOREIGN KEY (id_item)

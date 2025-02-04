@@ -7,19 +7,114 @@ De acordo com Silberschatz et al., os triggers são uma ferramenta importante em
 ## Stored Procedures
 
 ```
-CREATE PROCEDURE inserirProtagonista(IN nickname VARCHAR(255))
+DELIMITER $$
+
+CREATE TRIGGER check_exclusividade_entidade
+BEFORE INSERT ON entidade
+FOR EACH ROW
 BEGIN
-    INSERT INTO entidade (vida, dano) VALUES (100, 10);
+    DECLARE count_tipo INT;
+    IF NEW.tipo = 'npc' THEN
+        SELECT COUNT(*) INTO count_tipo FROM entidade WHERE tipo = 'protagonista' 
+                        AND identidade = NEW.identidade;
+        IF count_tipo > 0 THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Entidade não pode ser um NPC 
+                            e um Protagonista ao mesmo tempo';
+        END IF;
+    END IF;
+    IF NEW.tipo = 'protagonista' THEN
+        SELECT COUNT(*) INTO count_tipo FROM entidade WHERE tipo = 'npc' 
+        AND identidade = NEW.identidade;
+        IF count_tipo > 0 THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Entidade não pode ser um Protagonista 
+                                            e um NPC ao mesmo tempo';
+        END IF;
+    END IF;
+END$$
 
-    SET @id_entidade = LAST_INSERT_ID();
 
-    INSERT INTO protagonista (id_entidade, nickname, killcount, dinheirorecebido)
-    VALUES (@id_entidade, nickname, 0, 0);
-END;
+CREATE TRIGGER check_npc_tipo
+BEFORE INSERT ON npc
+FOR EACH ROW
+BEGIN
+    DECLARE count_tipos INT;
+    SELECT COUNT(*) INTO count_tipos FROM (
+        SELECT id_entidade FROM zumbi WHERE id_entidade = NEW.id_entidade
+        UNION ALL
+        SELECT id_entidade FROM chefe WHERE id_entidade = NEW.id_entidade
+        UNION ALL
+        SELECT id_entidade FROM cachorro_zumbi WHERE id_entidade = NEW.id_entidade
+	UNION ALL
+        SELECT id_entidade FROM plaga WHERE id_entidade = NEW.id_entidade
+	UNION ALL
+        SELECT id_entidade FROM vendedor WHERE id_entidade = NEW.id_entidade
+    ) AS subclasses;
+    IF  count_tipos = 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Cada NPC deve ser pelo menos de um tipo 
+                    (zumbi, chefe, cachorro_zumbi,plaga,vendedor)';
+    END IF;
+END$$
 
 
+CREATE TRIGGER check_item_tipo
+BEFORE INSERT ON item
+FOR EACH ROW
+BEGIN
+    DECLARE count_tipos INT;
+    SELECT COUNT(*) INTO count_tipos FROM (
+        SELECT id_item FROM equipamento WHERE id_item = NEW.id_item
+        UNION ALL
+        SELECT id_item FROM arma WHERE id_item = NEW.id_item
+        UNION ALL
+        SELECT id_item FROM consumivel WHERE id_item = NEW.id_item
+        UNION ALL
+        SELECT id_item FROM dinheiro WHERE id_item = NEW.id_item
+    ) AS subclasses;
+    IF  count_tipos = 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Cada item deve pertencer a pelo menos um tipo 
+                            (equipamento, arma, consumível ou dinheiro)';
+    END IF;
+END$$
+
+
+CREATE TRIGGER check_missao_tipo
+BEFORE INSERT ON missao
+FOR EACH ROW
+BEGIN
+    DECLARE count_tipos INT;
+    SELECT COUNT(*) INTO count_tipos FROM (
+        SELECT nome FROM assassinato WHERE nome = NEW.nome
+        UNION ALL
+        SELECT nome FROM recuperacao WHERE nome = NEW.nome
+    ) AS subclasses;
+    IF  count_tipos = 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Cada missão deve pertencer a pelo menos um 
+                                    tipo (assassinato ou recuperação)';
+    END IF;
+END$$
+
+
+CREATE TRIGGER check_vida_protagonista
+BEFORE UPDATE ON protagonista
+FOR EACH ROW
+BEGIN
+    IF NEW.vida > 100 THEN
+        SET NEW.vida = 100;
+    END IF;
+END$$
+
+
+DELIMITER ;
 ```
 
-| Versão | Descrição |                 Autor(es)                  |    Data    |
-| :----: | :-------: | :----------------------------------------: | :--------: |
-|  1.0   |  Criação  | [Bruno Cruz](https://github.com/Brunocrzz) | 08/01/2025 |
+
+
+| Versão |    Descrição    |                 Autor(es)                  |    Data    |
+| :----: | :-------------: | :----------------------------------------: | :--------: |
+|  1.0   |     Criação     | [Bruno Cruz](https://github.com/Brunocrzz) | 03/02/2025 |
+|  2.0   | Alteração Final | [Bruno Cruz](https://github.com/Brunocrzz) | 03/02/2025 |
