@@ -259,9 +259,9 @@ ALTER TABLE npc ADD CONSTRAINT FK_npc_2
     ON DELETE CASCADE;
 
 ALTER TABLE inventario ADD CONSTRAINT FK_inventario_2
-    FOREIGN KEY (id_protagonista)
-    REFERENCES protagonista (id_entidade)
-    ON DELETE RESTRICT;
+    FOREIGN KEY (id_protagonista) 
+    REFERENCES protagonista(id_entidade)
+    ON DELETE CASCADE;
 
 ALTER TABLE inventario ADD CONSTRAINT FK_inventario_3
     FOREIGN KEY (id_instancianpc)
