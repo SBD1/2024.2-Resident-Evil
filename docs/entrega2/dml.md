@@ -502,6 +502,16 @@ VALUES
     (29, 26, 12, 1),
     (30, 27, 11, 1),
     (31, 30, 24, 1);
+
+INSERT INTO backup_instancianpc (id_entidadenpc, fk_sala_numero, missao_nome, vida_atual)
+SELECT id_entidadenpc, fk_sala_numero, missao_nome, vida_atual FROM instancianpc;
+
+INSERT INTO backup_instanciaitem (id_item, id_inventario, nome_missao)
+SELECT id_item, id_inventario, nome_missao FROM instanciaitem;
+
+INSERT INTO backup_item_sala (fk_sala, id_item, quantidade)
+SELECT fk_sala, id_item, quantidade FROM item_sala;
+
 ```
 
 | Versão |   Descrição    |                                                                 Autor(es)                                                                  |    Data    |

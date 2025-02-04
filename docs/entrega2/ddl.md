@@ -208,6 +208,36 @@ CREATE TABLE item_sala (
     quantidade INT DEFAULT 1
 );
 
+CREATE TABLE backup_instancianpc (
+    idinstancianpc INT PRIMARY KEY AUTO_INCREMENT,
+    id_entidadenpc INT,
+    fk_sala_numero INT,
+    missao_nome VARCHAR(30),
+    vida_atual INT,
+    CONSTRAINT FK_backup_instancianpc_npc FOREIGN KEY (id_entidadenpc) REFERENCES npc(id_entidade) ON DELETE CASCADE,
+    CONSTRAINT FK_backup_instancianpc_sala FOREIGN KEY (fk_sala_numero) REFERENCES sala(numero) ON DELETE CASCADE,
+    CONSTRAINT FK_backup_instancianpc_missao FOREIGN KEY (missao_nome) REFERENCES missao(nome) ON DELETE CASCADE
+);
+
+CREATE TABLE backup_instanciaitem (
+    idinstanciaitem INT PRIMARY KEY AUTO_INCREMENT,
+    id_item INT,
+    id_inventario INT,
+    nome_missao VARCHAR(30),
+    CONSTRAINT FK_backup_instanciaitem_item FOREIGN KEY (id_item) REFERENCES item(iditem) ON DELETE CASCADE,
+    CONSTRAINT FK_backup_instanciaitem_inventario FOREIGN KEY (id_inventario) REFERENCES inventario(idinventario) ON DELETE CASCADE,
+    CONSTRAINT FK_backup_instanciaitem_missao FOREIGN KEY (nome_missao) REFERENCES missao(nome) ON DELETE CASCADE
+);
+
+CREATE TABLE backup_item_sala (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fk_sala INT,
+    id_item INT,
+    quantidade INT DEFAULT 1,
+    CONSTRAINT FK_backup_item_sala_sala FOREIGN KEY (fk_sala) REFERENCES sala(numero) ON DELETE CASCADE,
+    CONSTRAINT FK_backup_item_sala_item FOREIGN KEY (id_item) REFERENCES item(iditem) ON DELETE CASCADE
+);
+
 ALTER TABLE sala ADD CONSTRAINT FK_sala_2
     FOREIGN KEY (nome_mapa)
     REFERENCES mapa (nome)
