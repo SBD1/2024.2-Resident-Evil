@@ -1,5 +1,6 @@
 package retaguarda.inventario;
 
+
 import bancoDados.DatabasePool;
 import retaguarda.inventario.Inventario;
 import retaguarda.item.InstanciaItem;
@@ -100,4 +101,5 @@ public class InventarioService {
             e.printStackTrace();
         }
     }
+
 }

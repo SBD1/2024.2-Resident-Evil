@@ -1,6 +1,7 @@
 package retaguarda.item;
 
 public enum Tipo {
+
     arma, consumivel, equipamento, dinheiro;
 
     public static Tipo fromString(String str) {
@@ -15,4 +16,5 @@ public enum Tipo {
             default: throw new IllegalArgumentException("Tipo desconhecido: " + str);
         }
     }
+
 }

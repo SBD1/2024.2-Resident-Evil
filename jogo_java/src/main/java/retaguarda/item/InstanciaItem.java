@@ -3,6 +3,7 @@ package retaguarda.item;
 public class InstanciaItem {
     private int idInstanciaItem;
     private Item item;
+
     private String descricao;
 
     public InstanciaItem(int idInstanciaItem, Item item, String descricao) {
@@ -17,5 +18,6 @@ public class InstanciaItem {
 
     public int getId(){
         return this.idInstanciaItem;
+
     }
 }

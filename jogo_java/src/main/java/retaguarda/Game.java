@@ -1,5 +1,6 @@
 package retaguarda;
 
+
 import retaguarda.combate.CombatManager;
 import retaguarda.inventario.InventarioService;
 import retaguarda.mapa.CaminhoService;
@@ -327,5 +328,6 @@ public class Game {
 
     private static void iniciarCombate(Protagonista protagonista, int idInstNpc) {
         CombatManager.iniciarCombate(protagonista, idInstNpc);
+
     }
 }

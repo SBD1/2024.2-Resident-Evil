@@ -1,6 +1,7 @@
 package retaguarda.inventario;
 
 import retaguarda.item.InstanciaItem;
+
 import java.util.List;
 
 public class Inventario {
@@ -14,6 +15,7 @@ public class Inventario {
         this.pesoMax = pesoMax;
         this.idEntidade = idEntidade;
         this.idInstanciaNPC = idInstanciaNPC;
+
         this.itens = itens;
     }
 
@@ -28,4 +30,5 @@ public class Inventario {
     public List<InstanciaItem> listarItens() {
         return itens;
     }
+
 }

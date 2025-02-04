@@ -1,5 +1,6 @@
 package retaguarda.protagonista;
 
+
 import retaguarda.inventario.Inventario;
 import retaguarda.item.Arma;
 import retaguarda.item.Equipamento;
@@ -14,6 +15,7 @@ public class Protagonista {
     private int vida;
     private int dano;
     private int killcount;
+
     private int dinheiroRecebido;
     private int sala;
     private Inventario inventario;
@@ -85,4 +87,5 @@ public class Protagonista {
             e.printStackTrace();
         }
     }
+
 }

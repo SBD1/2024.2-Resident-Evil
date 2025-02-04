@@ -56,7 +56,9 @@ public class Arma extends Item{
         this.maxMuni = maxMuni;
     }
 
+
     public int getDanoEfetivo() {
         return (int) Math.round(dano * (1 + 0.2 * (nivel - 1)));
     }
+
 }

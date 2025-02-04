@@ -1,5 +1,6 @@
 package retaguarda.protagonista;
 
+
 import bancoDados.DatabasePool;
 import retaguarda.inventario.Inventario;
 import retaguarda.inventario.InventarioService;
